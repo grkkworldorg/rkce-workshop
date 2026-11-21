@@ -1,0 +1,145 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ILP Workshop – RK College of Engineering</title>
+<style>
+:root{--navy:#21295C;--blue:#065A82;--teal:#1C7293;--amber:#F2A104;--bg:#F4F7F9;--ink:#1d2433;--mut:#5b6474;--line:#dde3ea}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:16px 16px 48px}
+.hero{background:linear-gradient(115deg,var(--navy),var(--blue) 55%,var(--teal));color:#fff;border-radius:14px;padding:22px 22px 18px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-60px;top:-80px;width:220px;height:220px;border-radius:50%;background:rgba(242,161,4,.22)}
+.col{color:var(--amber);font-weight:800;letter-spacing:3px;font-size:13px}.addr{font-size:12.5px;opacity:.8}
+.addr a{color:#fff}h1{font-size:25px;margin:10px 0 8px;line-height:1.2}
+.tags span{display:inline-block;font-size:12.5px;font-weight:700;padding:3px 11px;border-radius:20px;border:1px solid rgba(255,255,255,.4);margin:0 6px 6px 0;background:rgba(255,255,255,.12)}
+.tags span.a{background:var(--amber);border-color:var(--amber);color:var(--navy)}.when{font-size:13.5px;margin-top:4px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin-top:14px}
+.card h2{margin:0 0 4px;font-size:18px;color:var(--navy)}.hint{color:var(--mut);font-size:13.5px;margin:0 0 10px}
+.q{margin:16px 0 0}.q>label.t{display:block;font-weight:600;margin-bottom:6px}.req{color:#c0392b}
+input[type=text],textarea,select{width:100%;padding:10px 12px;border:1px solid #c9d2dc;border-radius:8px;font:inherit;background:#fff}
+textarea{min-height:90px;resize:vertical}input:focus,textarea:focus,select:focus{outline:2px solid var(--teal);border-color:var(--teal)}
+.opt{display:flex;align-items:center;gap:10px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;margin-bottom:6px;cursor:pointer}
+.opt input{accent-color:var(--navy);width:20px;height:20px;flex-shrink:0;margin:0}
+table.grid{width:100%;border-collapse:collapse;font-size:14px}table.grid th,table.grid td{padding:7px 4px;text-align:center;border-bottom:1px solid var(--line)}
+table.grid td:first-child,table.grid th:first-child{text-align:left}table.grid input{accent-color:var(--navy);width:22px;height:22px;margin:0}table.grid label{display:block;padding:6px 0;cursor:pointer}
+.privacy{background:#eef6f9;border-left:4px solid var(--teal);padding:10px 12px;border-radius:6px;font-size:13.5px;margin-top:12px}
+.btn{display:inline-block;background:var(--navy);color:#fff;border:0;border-radius:9px;padding:12px 22px;font:inherit;font-weight:700;cursor:pointer;margin-top:18px}
+.btn:disabled{opacity:.5;cursor:default}.btn.amber{background:var(--amber);color:var(--navy)}
+.err{color:#c0392b;font-weight:600;margin-top:10px}
+.warn{background:#fff6e0;border:2px solid var(--amber);border-radius:12px;padding:16px}.warn h2{color:#8a5a00}
+.warn li{margin:6px 0}
+.quiz{user-select:none;-webkit-user-select:none}
+.top{display:flex;justify-content:space-between;font-weight:700;color:var(--navy)}
+.bar{height:10px;background:#e3e8ee;border-radius:6px;overflow:hidden;margin:8px 0 14px}.bar i{display:block;height:100%;background:var(--teal);width:100%}
+.bar i.low{background:#d9534f}.qt{font-size:18px;font-weight:700;margin:6px 0 10px}
+pre{background:#1e2433;color:#e8edf3;padding:12px 14px;border-radius:8px;font:14px/1.5 Consolas,Menlo,monospace;white-space:pre-wrap;margin:0 0 12px}
+.ans{display:block;width:100%;text-align:left;padding:12px 14px;border:1.5px solid var(--line);border-radius:9px;background:#fff;font:inherit;margin-bottom:8px;cursor:pointer}
+.ans:hover{border-color:var(--teal)}.ans.sel{background:var(--navy);color:#fff;border-color:var(--navy)}
+.ans code,.mono{font-family:Consolas,Menlo,monospace}
+.done{text-align:center}.big{font-size:44px;font-weight:800;color:var(--navy);margin:6px 0}
+.hide{display:none}body.quizmode .hero{display:none}
+@media(max-width:420px){.wrap{padding:12px 12px 40px}.hero{padding:16px}h1{font-size:21px}.card{padding:14px}.qt{font-size:17px}.btn{width:100%;margin-top:12px}}
+</style></head><body><div class="wrap">
+<div class="hero"><div class="col">RK COLLEGE OF ENGINEERING</div>
+<div class="addr">Kethanakonda (V), Ibrahimpatnam (M), VIJAYAWADA – 521456 · <a href="https://www.rkce.ac.in/" target="_blank">rkce.ac.in</a></div>
+<h1>3-Day Hands-on Workshop</h1>
+<div class="tags"><span>Python</span><span>Full Stack JS</span><span>SQL</span><span>Git</span><span class="a">AWS Cloud</span></div>
+<div class="when"><b>23 – 25 November 2026 (Mon – Wed)</b> · by ILP – Rajeev Kumar's Knowledge World</div></div>
+<div id="s1">
+<div class="card"><h2>Before the workshop</h2><p class="hint">Fill your details, then take a short 10-question skill check. Total time about 5 minutes. Please finish by <b>Sunday, 22 November, 6 PM</b>.</p>
+<div class="privacy"><b>Privacy:</b> we only ask for your name, roll number and branch. We do <b>not</b> collect phone numbers, email addresses or any other contact details. Your answers are used only to plan this workshop.</div></div>
+<div class="card"><h2>👤 About you</h2>
+<div class="q"><label class="t">Full name <span class="req">*</span></label><input type="text" id="name" maxlength="100"></div>
+<div class="q"><label class="t">Roll number <span class="req">*</span></label><input type="text" id="roll" maxlength="30"></div>
+<div class="q"><label class="t">Branch <span class="req">*</span></label><div id="branch"></div><input type="text" id="branchOther" class="hide" placeholder="Type your branch" maxlength="60"></div>
+</div>
+<div class="card"><h2>💻 Track & skills</h2><p class="hint">Be honest – this only helps us start at the right level for you.</p>
+<div class="q"><label class="t">Which track do you want? <span class="req">*</span></label><div id="track"></div></div>
+<div class="q"><label class="t">Rate yourself in each skill <span class="req">*</span></label>
+<p class="hint">0 = never used · 1 = know a little · 2 = can write small programs · 3 = confident</p><div id="grid"></div></div>
+<div class="q"><label class="t">Describe one project you have built, in one or two lines <span class="req">*</span></label>
+<p class="hint">If you have not built any project yet, write "None".</p><textarea id="project" maxlength="1000"></textarea></div>
+</div>
+<div class="card"><h2>🎯 Your workshop preferences</h2>
+<div class="q"><label class="t">Can you bring a laptop to the workshop? <span class="req">*</span></label><div id="laptop"></div></div>
+<div class="q"><label class="t">Do you have a LinkedIn profile? <span class="req">*</span></label><div id="linkedin"></div></div>
+<div class="q"><label class="t">How do you prefer to learn in this workshop? <span class="req">*</span></label><div id="learning"></div>
+<textarea id="learningNote" maxlength="1000" placeholder="Anything else about how you like to learn? (optional)"></textarea></div>
+<div class="q"><label class="t">What do you expect most? (choose all that apply)</label><div id="expect"></div><input type="text" id="expectOther" class="hide" placeholder="Other – please type" maxlength="200"></div>
+<div class="q"><label class="t">Tell us what you need from this workshop</label><p class="hint">Write as many points as you like – topics, doubts, anything you want us to know.</p><textarea id="need" maxlength="2000" style="min-height:130px"></textarea></div>
+<div class="q"><label class="t">Target job role</label><select id="role"><option value="">Choose…</option></select></div>
+<div id="err1" class="err"></div>
+<button class="btn" id="next1">Next: Skill check →</button>
+</div></div>
+<div id="s2" class="hide"><div class="card warn"><h2>⚠️ Read before you start</h2><ul>
+<li><b>10 questions</b>, one at a time. You get <b>20 seconds</b> for each question. You cannot go back.</li>
+<li><b>Do not use ChatGPT, Claude, Gemini, Google or any AI tool.</b> There is no time for it, and leaving this page is recorded.</li>
+<li><b>If you use AI to answer, we cannot help you in your career growth.</b> This check is only to find your real level so we can teach you better. It does not affect your marks.</li>
+<li>Only <b>one attempt</b> per roll number. Do not refresh the page once you start.</li>
+</ul><div id="err2" class="err"></div>
+<button class="btn" id="back2" style="background:#6b7480">← Back</button> 
+<button class="btn amber" id="start">I understand – Start the quiz</button></div></div>
+<div id="s3" class="hide"><div class="card quiz"><div class="top"><span id="qn"></span><span id="tm"></span></div>
+<div class="bar"><i id="bar"></i></div><div class="qt" id="qt"></div><pre id="qc" class="hide"></pre><div id="qo"></div></div></div>
+<div id="s4" class="hide"><div class="card done"><h2>✅ Thank you!</h2><p>Your details and answers are submitted.</p>
+<div class="big" id="score"></div><p class="hint">See you at the workshop. – ILP Team</p></div></div>
+</div><script>
+var BRANCHES=["CSE","CSE (AI & ML)","CSE (Data Science)","IT","ECE","EEE","Other"];
+var TRACKS=[["python","Python (Python + SQL + Flask)"],["js","Full Stack JavaScript (HTML, CSS, JS, React, Node)"]];
+var SKILLS=["Python","JavaScript","HTML / CSS","SQL","Git / GitHub","Linux","AWS / Cloud"];
+var LEARN=["Mostly practicals (hands-on coding)","Balanced – some theory, then practicals","More theory and concepts first"];
+var EXPECT=["Hands-on coding","Resume project","Certificate","Interview / placement prep","Internship opportunity","Other"];
+var ROLES=["Software Developer","Full Stack Developer","Data Analyst","DevOps / Cloud Engineer","Testing / QA","Not decided","Other"];
+function $(id){return document.getElementById(id)}
+function radios(box,name,items){items.forEach(function(it){var v=Array.isArray(it)?it[0]:it,t=Array.isArray(it)?it[1]:it;
+ var l=document.createElement("label");l.className="opt";var i=document.createElement("input");i.type="radio";i.name=name;i.value=v;
+ l.appendChild(i);l.appendChild(document.createTextNode(t));$(box).appendChild(l);});}
+function val(name){var e=document.querySelector("input[name=\""+name+"\"]:checked");return e?e.value:""}
+radios("branch","branch",BRANCHES);radios("track","track",TRACKS);radios("laptop","laptop",["Yes","No"]);
+radios("linkedin","linkedin",["Yes","No"]);radios("learning","learning",LEARN);
+EXPECT.forEach(function(t){var l=document.createElement("label");l.className="opt";var i=document.createElement("input");i.type="checkbox";i.value=t;i.name="expect";
+ l.appendChild(i);l.appendChild(document.createTextNode(t));$("expect").appendChild(l);});
+ROLES.forEach(function(t){var o=document.createElement("option");o.textContent=t;o.value=t;$("role").appendChild(o);});
+var g="<table class=grid><tr><th>Skill</th><th>0</th><th>1</th><th>2</th><th>3</th></tr>";
+SKILLS.forEach(function(s,k){g+="<tr><td>"+s+"</td>";for(var n=0;n<4;n++)g+="<td><label><input type=radio name=sk"+k+" value="+n+" aria-label=\""+s+" "+n+"\"></label></td>";g+="</tr>"});
+$("grid").innerHTML=g+"</table>";
+document.addEventListener("change",function(){$("branchOther").className=val("branch")==="Other"?"":"hide";
+ var oth=document.querySelector("input[name=expect][value=Other]");$("expectOther").className=oth&&oth.checked?"":"hide";});
+var P=null;
+function collect(){var e=[],r={};
+ var name=$("name").value.trim(),roll=$("roll").value.trim();if(!name)e.push("Full name");if(!roll)e.push("Roll number");
+ var br=val("branch");if(br==="Other")br=$("branchOther").value.trim();if(!br)e.push("Branch");
+ var tr=val("track");if(!tr)e.push("Track");
+ SKILLS.forEach(function(s,k){var v=val("sk"+k);if(v==="")e.push("Rating for "+s);r[s]=v;});
+ var pr=$("project").value.trim();if(!pr)e.push("Project");
+ var lp=val("laptop");if(!lp)e.push("Laptop");var li=val("linkedin");if(!li)e.push("LinkedIn");
+ var le=val("learning");if(!le)e.push("How you prefer to learn");
+ var ex=[].slice.call(document.querySelectorAll("input[name=expect]:checked")).map(function(i){return i.value==="Other"?("Other: "+$("expectOther").value.trim()):i.value});
+ if(e.length){$("err1").textContent="Please fill: "+e.join(", ");return null}
+ return{name:name,roll:roll,branch:br,track:tr,ratings:r,project:pr,laptop:lp,linkedin:li,learning:le,
+  learningNote:$("learningNote").value.trim(),expectations:ex.join("; "),need:$("need").value.trim(),role:$("role").value}}
+function show(id){["s1","s2","s3","s4"].forEach(function(s){$(s).className=s===id?"":"hide"});document.body.className=id==="s3"?"quizmode":"";window.scrollTo(0,0)}
+$("next1").onclick=function(){$("err1").textContent="";var p=collect();if(p){P=p;show("s2")}};
+$("back2").onclick=function(){show("s1")};
+var API="https://script.google.com/macros/s/AKfycbymDI50T5zCIYdEtwbAW3oaHLtmL-b_WIbdEqTvm_QH1tvbTLLxRcUaMxkLCcBXbFy1/exec";
+function call(fn,args,ok,fail){
+ if(window.google&&google.script&&google.script.run){var r=google.script.run.withSuccessHandler(ok).withFailureHandler(fail);r[fn].apply(r,args);return}
+ var body=fn==="startQuiz"?{action:"start",p:args[0]}:{action:"submit",token:args[0],answers:args[1],switches:args[2]};
+ fetch(API,{method:"POST",body:JSON.stringify(body),headers:{"Content-Type":"text/plain;charset=utf-8"},credentials:"omit",redirect:"follow"})
+  .then(function(x){return x.json()}).then(function(j){if(j.err)fail({message:j.err});else ok(j.ok)})
+  .catch(function(){fail({message:"Network problem. Please check your internet and try again."})})}
+var Q=null,idx=0,ans=[],timer=null,left=0,switches=0,running=false;
+document.addEventListener("visibilitychange",function(){if(running&&document.hidden)switches++});
+$("start").onclick=function(){var b=this;b.disabled=true;$("back2").disabled=true;b.textContent="Loading…";$("err2").textContent="";
+ call("startQuiz",[P],function(res){Q=res;idx=0;ans=[];running=true;show("s3");
+  window.onbeforeunload=function(){return "Quiz in progress"};next();},
+ function(err){b.disabled=false;$("back2").disabled=false;b.textContent="I understand – Start the quiz";
+  $("err2").textContent=(err&&err.message)||String(err)})};
+function next(){clearInterval(timer);if(idx>=Q.questions.length){finish();return}
+ var q=Q.questions[idx];$("qn").textContent="Question "+(idx+1)+" of "+Q.questions.length;
+ $("qt").textContent=q.q;if(q.c){$("qc").textContent=q.c;$("qc").className=""}else{$("qc").className="hide"}
+ var box=$("qo");box.innerHTML="";var locked=false;
+ q.o.forEach(function(o){var b=document.createElement("button");b.className="ans";b.textContent=o;if(/[<>(){}\[\]"=;.]/.test(o))b.classList.add("mono");
+  b.onclick=function(){if(locked)return;locked=true;b.classList.add("sel");ans[idx]=o;clearInterval(timer);setTimeout(function(){idx++;next()},350)};box.appendChild(b)});
+ left=Q.seconds;tick();timer=setInterval(function(){left--;tick();if(left<=0){clearInterval(timer);locked=true;ans[idx]=null;idx++;next()}},1000)}
+function tick(){$("tm").textContent="⏱ "+left+"s";var pc=Math.max(0,left/Q.seconds*100);$("bar").style.width=pc+"%";$("bar").className=left<=5?"low":""}
+function finish(){running=false;window.onbeforeunload=null;$("qt").textContent="Submitting…";$("qo").innerHTML="";$("qc").className="hide";
+ call("submitQuiz",[Q.token,ans,switches],function(r){$("score").textContent=r.score+" / "+r.total;show("s4")},
+  function(err){$("qt").textContent="Could not submit: "+((err&&err.message)||err);var rb=document.createElement("button");rb.className="btn";rb.textContent="Try again";rb.onclick=finish;$("qo").appendChild(rb)})}
+</script></body></html>
