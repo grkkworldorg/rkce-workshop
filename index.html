@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ILP Workshop – RK College of Engineering</title>
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Day 1 Homework – ILP Workshop, RK College of Engineering</title>
 <style>
 :root{--navy:#21295C;--blue:#065A82;--teal:#1C7293;--amber:#F2A104;--bg:#F4F7F9;--ink:#1d2433;--mut:#5b6474;--line:#dde3ea}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
@@ -35,111 +35,113 @@ pre{background:#1e2433;color:#e8edf3;padding:12px 14px;border-radius:8px;font:14
 .done{text-align:center}.big{font-size:44px;font-weight:800;color:var(--navy);margin:6px 0}
 .hide{display:none}body.quizmode .hero{display:none}
 @media(max-width:420px){.wrap{padding:12px 12px 40px}.hero{padding:16px}h1{font-size:21px}.card{padding:14px}.qt{font-size:17px}.btn{width:100%;margin-top:12px}}
+.opt.other-on{border-color:var(--amber);background:#fff6e0}
+textarea.own{min-height:70px;margin-top:6px}textarea.own.hl{outline:2px solid var(--amber);border-color:var(--amber)}
+.own-l{display:block;font-weight:600;margin:14px 0 2px;color:var(--teal)}
+.pill{display:inline-block;background:#eef6f9;color:var(--teal);font-size:12px;font-weight:700;padding:2px 9px;border-radius:12px;margin-left:6px;vertical-align:middle}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:0 8px}@media(max-width:520px){.cols{grid-template-columns:1fr}}
 </style></head><body><div class="wrap">
 <div class="hero"><div class="col">RK COLLEGE OF ENGINEERING</div>
 <div class="addr">Kethanakonda (V), Ibrahimpatnam (M), VIJAYAWADA – 521456 · <a href="https://www.rkce.ac.in/" target="_blank">rkce.ac.in</a></div>
 <h1>3-Day Hands-on Workshop</h1>
 <div class="tags"><span>Python</span><span>Full Stack JS</span><span>SQL</span><span>Git</span><span class="a">AWS Cloud</span></div>
 <div class="when"><b>23 – 25 November 2026 (Mon – Wed)</b> · by ILP – Rajeev Kumar's Knowledge World</div></div>
-<div id="s1">
-<div class="card"><h2>Before the workshop</h2><p class="hint">Fill your details, then take a short 10-question skill check. Total time about 5 minutes. Please finish by <b>Sunday, 22 November, 6 PM</b>.</p>
-<div class="privacy"><b>Privacy:</b> we only ask for your name, roll number and branch. We do <b>not</b> collect phone numbers, email addresses or any other contact details. Your answers are used only to plan this workshop.</div></div>
-<div class="card"><h2>👤 About you</h2>
+<div id="f">
+<div class="card"><h2>📝 Day 1 Homework</h2><p class="hint">Tell us your problems, your product idea, and what you want to learn. About <b>4 minutes</b>. Please submit by <b>Tuesday, 24 November, 9:00 AM</b>.</p>
+<p class="hint">Every part has a box to <b>write your own points</b>. Only the 3 questions marked <span class="req">*</span> are required. Write in simple English; Telugu words are fine too.</p>
+<div class="privacy"><b>Privacy:</b> we do <b>not</b> collect phone numbers or email addresses. Your <b>problems are shown without names</b>. Product ideas may be read out on Day 3 with your name.</div></div>
+
+<div class="card"><h2>👤 Part 1 · About you</h2>
 <div class="q"><label class="t">Full name <span class="req">*</span></label><input type="text" id="name" maxlength="100"></div>
 <div class="q"><label class="t">Roll number <span class="req">*</span></label><input type="text" id="roll" maxlength="30"></div>
-<div class="q"><label class="t">Branch <span class="req">*</span></label><div id="branch"></div><input type="text" id="branchOther" class="hide" placeholder="Type your branch" maxlength="60"></div>
+<div class="q"><label class="t">Branch</label><div class="opt" style="cursor:default"><input type="radio" checked disabled> CSE</div></div>
+<div class="q"><label class="t">Your lab <span class="req">*</span></label><div id="lab" class="cols"></div></div>
+<div class="q"><label class="t">Team number <span class="pill">optional</span></label><input type="text" id="team" maxlength="10" placeholder="e.g. 4"></div>
+<label class="own-l" for="about">✍️ Tell us about yourself <span class="pill">optional</span></label>
+<textarea id="about" class="own" maxlength="1000" placeholder="Your hobbies, goals, dream job, anything you want us to know"></textarea>
 </div>
-<div class="card"><h2>💻 Track & skills</h2><p class="hint">Be honest – this only helps us start at the right level for you.</p>
-<div class="q"><label class="t">Which track do you want? <span class="req">*</span></label><div id="track"></div></div>
-<div class="q"><label class="t">Rate yourself in each skill <span class="req">*</span></label>
-<p class="hint">0 = never used · 1 = know a little · 2 = can write small programs · 3 = confident</p><div id="grid"></div></div>
-<div class="q"><label class="t">Describe one project you have built, in one or two lines <span class="req">*</span></label>
-<p class="hint">If you have not built any project yet, write "None".</p><textarea id="project" maxlength="1000"></textarea></div>
+
+<div class="card"><h2>🧱 Part 2 · My problems <span class="pill">shown without names</span></h2>
+<div class="q"><label class="t">What stops you in coding, studies or interviews? Tick all that apply.</label><div id="problems"></div></div>
+<label class="own-l" for="ownProblems">✍️ Write your own problems <span class="pill">optional</span></label>
+<textarea id="ownProblems" class="own" maxlength="2000" placeholder="Any problem, in your own words. One per line is fine."></textarea>
 </div>
-<div class="card"><h2>🎯 Your workshop preferences</h2>
-<div class="q"><label class="t">Can you bring a laptop to the workshop? <span class="req">*</span></label><div id="laptop"></div></div>
-<div class="q"><label class="t">Do you have a LinkedIn profile? <span class="req">*</span></label><div id="linkedin"></div></div>
-<div class="q"><label class="t">How do you prefer to learn in this workshop? <span class="req">*</span></label><div id="learning"></div>
-<textarea id="learningNote" maxlength="1000" placeholder="Anything else about how you like to learn? (optional)"></textarea></div>
-<div class="q"><label class="t">What do you expect most? (choose all that apply)</label><div id="expect"></div><input type="text" id="expectOther" class="hide" placeholder="Other – please type" maxlength="200"></div>
-<div class="q"><label class="t">Tell us what you need from this workshop</label><p class="hint">Write as many points as you like – topics, doubts, anything you want us to know.</p><textarea id="need" maxlength="2000" style="min-height:130px"></textarea></div>
-<div class="q"><label class="t">Target job role</label><select id="role"><option value="">Choose…</option></select></div>
-<div id="err1" class="err"></div>
-<button class="btn" id="next1">Next: Skill check →</button>
+
+<div class="card"><h2>💡 Part 3 · My product idea</h2><p class="hint">Think of a problem you see around you: college, home, village, shops, farming. How can an app solve it?</p>
+<div class="q"><label class="t">Idea name</label><input type="text" id="ideaName" maxlength="120" placeholder="e.g. Hostel Mess Feedback App"></div>
+<div class="q"><label class="t">The problem: what is wrong today?</label><textarea id="ideaProblem" maxlength="1000"></textarea></div>
+<div class="q"><label class="t">Who has this problem?</label><input type="text" id="ideaWho" maxlength="300" placeholder="e.g. students, farmers, shop owners"></div>
+<div class="q"><label class="t">Your solution, in 2–3 lines</label><textarea id="ideaSolution" maxlength="1500"></textarea></div>
+<div class="q"><label class="t">Main feature: the one thing it must do</label><input type="text" id="ideaFeature" maxlength="500"></div>
+<div class="q"><label class="t">Can you build it with what we learn in this workshop?</label><div id="canBuild" class="cols"></div></div>
+<div class="q"><label class="t">Category</label><div id="category" class="cols"></div></div>
+<label class="own-l" for="otherIdeas">✍️ Any other ideas or points <span class="pill">optional</span></label>
+<textarea id="otherIdeas" class="own" maxlength="2000" placeholder="A second idea, extra features, anything else"></textarea>
+</div>
+
+<div class="card"><h2>🎯 Part 4 · Learning & expectations</h2>
+<div class="q"><label class="t">What do you want to learn next? Tick all that apply.</label><div id="learn" class="cols"></div></div>
+<label class="own-l" for="ownLearn">✍️ Other things I want to learn <span class="pill">optional</span></label>
+<textarea id="ownLearn" class="own" maxlength="1000"></textarea>
+<div class="q"><label class="t">What do you expect from us (ILP)? Tick all that apply.</label><div id="expect"></div></div>
+<label class="own-l" for="ownExpect">✍️ What else do you expect from us? <span class="pill">optional</span></label>
+<textarea id="ownExpect" class="own" maxlength="1500"></textarea>
+</div>
+
+<div class="card"><h2>🗣️ Part 5 · Day 1 feedback</h2>
+<div class="q"><label class="t">Today was:</label><div id="pace" class="cols"></div></div>
+<div class="q"><label class="t">One thing to explain again tomorrow</label><input type="text" id="explainAgain" maxlength="500"></div>
+<label class="own-l" for="ownFeedback">✍️ Your feedback in your own words <span class="pill">optional</span></label>
+<textarea id="ownFeedback" class="own" maxlength="2000" placeholder="What you liked, what was hard, what we should change"></textarea>
+<div id="err" class="err"></div>
+<button class="btn" id="send">Submit homework ✓</button>
 </div></div>
-<div id="s2" class="hide"><div class="card warn"><h2>⚠️ Read before you start</h2><ul>
-<li><b>10 questions</b>, one at a time. You get <b>20 seconds</b> for each question. You cannot go back.</li>
-<li><b>Do not use ChatGPT, Claude, Gemini, Google or any AI tool.</b> There is no time for it, and leaving this page is recorded.</li>
-<li><b>If you use AI to answer, we cannot help you in your career growth.</b> This check is only to find your real level so we can teach you better. It does not affect your marks.</li>
-<li>Only <b>one attempt</b> per roll number. Do not refresh the page once you start.</li>
-</ul><div id="err2" class="err"></div>
-<button class="btn" id="back2" style="background:#6b7480">← Back</button> 
-<button class="btn amber" id="start">I understand – Start the quiz</button></div></div>
-<div id="s3" class="hide"><div class="card quiz"><div class="top"><span id="qn"></span><span id="tm"></span></div>
-<div class="bar"><i id="bar"></i></div><div class="qt" id="qt"></div><pre id="qc" class="hide"></pre><div id="qo"></div></div></div>
-<div id="s4" class="hide"><div class="card done"><h2>✅ Thank you!</h2><p>Your details and answers are submitted.</p>
-<div class="big" id="score"></div><p class="hint">See you at the workshop. – ILP Team</p></div></div>
+
+<div id="done" class="hide"><div class="card done"><h2>✅ Thank you!</h2><p id="doneMsg">Your homework is submitted.</p>
+<p class="hint">Want to change something? Just fill the form again with the same roll number. Your latest answers will be kept.</p>
+<button class="btn" id="again" style="background:#6b7480">Edit my answers</button>
+<p class="hint" style="margin-top:16px">See you tomorrow. – ILP Team</p></div></div>
 </div><script>
-var BRANCHES=["CSE","CSE (AI & ML)","CSE (Data Science)","IT","ECE","EEE","Other"];
-var TRACKS=[["python","Python (Python + SQL + Flask)"],["js","Full Stack JavaScript (HTML, CSS, JS, React, Node)"]];
-var SKILLS=["Python","JavaScript","HTML / CSS","SQL","Git / GitHub","Linux","AWS / Cloud"];
-var LEARN=["Mostly practicals (hands-on coding)","Balanced – some theory, then practicals","More theory and concepts first"];
-var EXPECT=["Hands-on coding","Resume project","Certificate","Interview / placement prep","Internship opportunity","Other"];
-var ROLES=["Software Developer","Full Stack Developer","Data Analyst","DevOps / Cloud Engineer","Testing / QA","Not decided","Other"];
+var LABS=[["Python","Python lab"],["React","React lab"]];
+var PROBLEMS=["I can't start coding on my own","I don't understand error messages","English / speaking","Fear of interviews","Aptitude","No projects for my resume","I don't know what to learn next","Laptop or internet problems","Other"];
+var CANBUILD=["Yes","Partly","Not sure"];
+var CATS=["Education","Health","Farming","College life","Shopping","Money","Jobs","Other"];
+var LEARN=["Python (deeper)","Java","React / web development","Node / backend","SQL / databases","Cloud (AWS / Azure)","DevOps / Git / Linux","Data analysis / AI / ML","Cyber security","Aptitude","English / speaking","Interview preparation","Other"];
+var EXPECT=["More workshops like this","Internship / live project","Placement training","Mock interviews","Resume and LinkedIn help","Certificate course","Doubt support after the workshop","Other"];
+var PACE=["Too fast","Just right","Too slow"];
+// which "write your own" box goes with which tick-list
+var OWN={problems:"ownProblems",learn:"ownLearn",expect:"ownExpect",category:"otherIdeas"};
 function $(id){return document.getElementById(id)}
-function radios(box,name,items){items.forEach(function(it){var v=Array.isArray(it)?it[0]:it,t=Array.isArray(it)?it[1]:it;
- var l=document.createElement("label");l.className="opt";var i=document.createElement("input");i.type="radio";i.name=name;i.value=v;
+function build(box,type,items){items.forEach(function(it){var v=Array.isArray(it)?it[0]:it,t=Array.isArray(it)?it[1]:it;
+ var l=document.createElement("label");l.className="opt";var i=document.createElement("input");i.type=type;i.name=box;i.value=v;
  l.appendChild(i);l.appendChild(document.createTextNode(t));$(box).appendChild(l);});}
-function val(name){var e=document.querySelector("input[name=\""+name+"\"]:checked");return e?e.value:""}
-radios("branch","branch",BRANCHES);radios("track","track",TRACKS);radios("laptop","laptop",["Yes","No"]);
-radios("linkedin","linkedin",["Yes","No"]);radios("learning","learning",LEARN);
-EXPECT.forEach(function(t){var l=document.createElement("label");l.className="opt";var i=document.createElement("input");i.type="checkbox";i.value=t;i.name="expect";
- l.appendChild(i);l.appendChild(document.createTextNode(t));$("expect").appendChild(l);});
-ROLES.forEach(function(t){var o=document.createElement("option");o.textContent=t;o.value=t;$("role").appendChild(o);});
-var g="<table class=grid><tr><th>Skill</th><th>0</th><th>1</th><th>2</th><th>3</th></tr>";
-SKILLS.forEach(function(s,k){g+="<tr><td>"+s+"</td>";for(var n=0;n<4;n++)g+="<td><label><input type=radio name=sk"+k+" value="+n+" aria-label=\""+s+" "+n+"\"></label></td>";g+="</tr>"});
-$("grid").innerHTML=g+"</table>";
-document.addEventListener("change",function(){$("branchOther").className=val("branch")==="Other"?"":"hide";
- var oth=document.querySelector("input[name=expect][value=Other]");$("expectOther").className=oth&&oth.checked?"":"hide";});
-var P=null;
-function collect(){var e=[],r={};
- var name=$("name").value.trim(),roll=$("roll").value.trim();if(!name)e.push("Full name");if(!roll)e.push("Roll number");
- var br=val("branch");if(br==="Other")br=$("branchOther").value.trim();if(!br)e.push("Branch");
- var tr=val("track");if(!tr)e.push("Track");
- SKILLS.forEach(function(s,k){var v=val("sk"+k);if(v==="")e.push("Rating for "+s);r[s]=v;});
- var pr=$("project").value.trim();if(!pr)e.push("Project");
- var lp=val("laptop");if(!lp)e.push("Laptop");var li=val("linkedin");if(!li)e.push("LinkedIn");
- var le=val("learning");if(!le)e.push("How you prefer to learn");
- var ex=[].slice.call(document.querySelectorAll("input[name=expect]:checked")).map(function(i){return i.value==="Other"?("Other: "+$("expectOther").value.trim()):i.value});
- if(e.length){$("err1").textContent="Please fill: "+e.join(", ");return null}
- return{name:name,roll:roll,branch:br,track:tr,ratings:r,project:pr,laptop:lp,linkedin:li,learning:le,
-  learningNote:$("learningNote").value.trim(),expectations:ex.join("; "),need:$("need").value.trim(),role:$("role").value}}
-function show(id){["s1","s2","s3","s4"].forEach(function(s){$(s).className=s===id?"":"hide"});document.body.className=id==="s3"?"quizmode":"";window.scrollTo(0,0)}
-$("next1").onclick=function(){$("err1").textContent="";var p=collect();if(p){P=p;show("s2")}};
-$("back2").onclick=function(){show("s1")};
+function one(n){var e=document.querySelector("input[name=\""+n+"\"]:checked");return e?e.value:""}
+function many(n){return [].slice.call(document.querySelectorAll("input[name=\""+n+"\"]:checked")).map(function(i){return i.value})}
+build("lab","radio",LABS);build("problems","checkbox",PROBLEMS);build("canBuild","radio",CANBUILD);
+build("category","radio",CATS);build("learn","checkbox",LEARN);build("expect","checkbox",EXPECT);build("pace","radio",PACE);
+function refresh(){
+ document.querySelectorAll(".opt").forEach(function(l){var i=l.querySelector("input");l.classList.toggle("other-on",i.value==="Other"&&i.checked)});
+ Object.keys(OWN).forEach(function(k){if(!OWN[k])return;var on=document.querySelector("input[name=\""+k+"\"][value=Other]:checked");
+  var ta=$(OWN[k]);ta.classList.toggle("hl",!!on);if(on&&!ta.value)ta.placeholder="You ticked Other. Please write it here.";});}
+document.addEventListener("change",refresh);
+function v(id){return $(id).value.trim()}
+function collect(){var e=[];var name=v("name"),roll=v("roll");if(!name)e.push("Full name");if(!roll)e.push("Roll number");
+var br="CSE";var lab=one("lab");if(!lab)e.push("Lab");
+ if(e.length){$("err").textContent="Please fill: "+e.join(", ")+" (in Part 1)";return null}
+ return{name:name,roll:roll,branch:br,lab:lab,team:v("team"),about:v("about"),
+  problems:many("problems"),ownProblems:v("ownProblems"),
+  ideaName:v("ideaName"),ideaProblem:v("ideaProblem"),ideaWho:v("ideaWho"),ideaSolution:v("ideaSolution"),ideaFeature:v("ideaFeature"),
+  canBuild:one("canBuild"),category:one("category"),otherIdeas:v("otherIdeas"),
+  learn:many("learn"),ownLearn:v("ownLearn"),expect:many("expect"),ownExpect:v("ownExpect"),
+  pace:one("pace"),explainAgain:v("explainAgain"),ownFeedback:v("ownFeedback")}}
 var API="https://script.google.com/macros/s/AKfycbymDI50T5zCIYdEtwbAW3oaHLtmL-b_WIbdEqTvm_QH1tvbTLLxRcUaMxkLCcBXbFy1/exec";
-function call(fn,args,ok,fail){
- if(window.google&&google.script&&google.script.run){var r=google.script.run.withSuccessHandler(ok).withFailureHandler(fail);r[fn].apply(r,args);return}
- var body=fn==="startQuiz"?{action:"start",p:args[0]}:{action:"submit",token:args[0],answers:args[1],switches:args[2]};
- fetch(API,{method:"POST",body:JSON.stringify(body),headers:{"Content-Type":"text/plain;charset=utf-8"},credentials:"omit",redirect:"follow"})
-  .then(function(x){return x.json()}).then(function(j){if(j.err)fail({message:j.err});else ok(j.ok)})
-  .catch(function(){fail({message:"Network problem. Please check your internet and try again."})})}
-var Q=null,idx=0,ans=[],timer=null,left=0,switches=0,running=false;
-document.addEventListener("visibilitychange",function(){if(running&&document.hidden)switches++});
-$("start").onclick=function(){var b=this;b.disabled=true;$("back2").disabled=true;b.textContent="Loading…";$("err2").textContent="";
- call("startQuiz",[P],function(res){Q=res;idx=0;ans=[];running=true;show("s3");
-  window.onbeforeunload=function(){return "Quiz in progress"};next();},
- function(err){b.disabled=false;$("back2").disabled=false;b.textContent="I understand – Start the quiz";
-  $("err2").textContent=(err&&err.message)||String(err)})};
-function next(){clearInterval(timer);if(idx>=Q.questions.length){finish();return}
- var q=Q.questions[idx];$("qn").textContent="Question "+(idx+1)+" of "+Q.questions.length;
- $("qt").textContent=q.q;if(q.c){$("qc").textContent=q.c;$("qc").className=""}else{$("qc").className="hide"}
- var box=$("qo");box.innerHTML="";var locked=false;
- q.o.forEach(function(o){var b=document.createElement("button");b.className="ans";b.textContent=o;if(/[<>(){}\[\]"=;.]/.test(o))b.classList.add("mono");
-  b.onclick=function(){if(locked)return;locked=true;b.classList.add("sel");ans[idx]=o;clearInterval(timer);setTimeout(function(){idx++;next()},350)};box.appendChild(b)});
- left=Q.seconds;tick();timer=setInterval(function(){left--;tick();if(left<=0){clearInterval(timer);locked=true;ans[idx]=null;idx++;next()}},1000)}
-function tick(){$("tm").textContent="⏱ "+left+"s";var pc=Math.max(0,left/Q.seconds*100);$("bar").style.width=pc+"%";$("bar").className=left<=5?"low":""}
-function finish(){running=false;window.onbeforeunload=null;$("qt").textContent="Submitting…";$("qo").innerHTML="";$("qc").className="hide";
- call("submitQuiz",[Q.token,ans,switches],function(r){$("score").textContent=r.score+" / "+r.total;show("s4")},
-  function(err){$("qt").textContent="Could not submit: "+((err&&err.message)||err);var rb=document.createElement("button");rb.className="btn";rb.textContent="Try again";rb.onclick=finish;$("qo").appendChild(rb)})}
+$("send").onclick=function(){var b=this;$("err").textContent="";var p=collect();if(!p)return;
+ b.disabled=true;b.textContent="Submitting…";
+ fetch(API,{method:"POST",body:JSON.stringify({action:"homework",p:p}),headers:{"Content-Type":"text/plain;charset=utf-8"},credentials:"omit",redirect:"follow"})
+ .then(function(x){return x.json()}).then(function(j){if(j.err)throw new Error(j.err);
+   $("doneMsg").textContent=j.ok&&j.ok.updated?"Your answers are updated.":"Your homework is submitted.";
+   $("f").className="hide";$("done").className="";window.scrollTo(0,0)})
+ .catch(function(err){$("err").textContent=(err&&err.message&&err.message.indexOf("fetch")<0)?err.message:"Network problem. Please check your internet and try again.";})
+ .finally(function(){b.disabled=false;b.textContent="Submit homework ✓"})};
+$("again").onclick=function(){$("done").className="hide";$("f").className="";window.scrollTo(0,0)};
 </script></body></html>
