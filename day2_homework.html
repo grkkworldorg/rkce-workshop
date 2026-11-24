@@ -1,0 +1,88 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Day 2 Homework – ILP Workshop, RK College of Engineering</title>
+<style>
+:root{--navy:#21295C;--blue:#065A82;--teal:#1C7293;--amber:#F2A104;--bg:#F4F7F9;--ink:#1d2433;--mut:#5b6474;--line:#dde3ea}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:16px 16px 48px}
+.hero{background:linear-gradient(115deg,var(--navy),var(--blue) 55%,var(--teal));color:#fff;border-radius:14px;padding:22px 22px 18px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-60px;top:-80px;width:220px;height:220px;border-radius:50%;background:rgba(242,161,4,.22)}
+.col{color:var(--amber);font-weight:800;letter-spacing:3px;font-size:13px}.addr{font-size:12.5px;opacity:.8}
+.addr a{color:#fff}h1{font-size:25px;margin:10px 0 8px;line-height:1.2}
+.tags span{display:inline-block;font-size:12.5px;font-weight:700;padding:3px 11px;border-radius:20px;border:1px solid rgba(255,255,255,.4);margin:0 6px 6px 0;background:rgba(255,255,255,.12)}
+.tags span.a{background:var(--amber);border-color:var(--amber);color:var(--navy)}.when{font-size:13.5px;margin-top:4px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin-top:14px}
+.card h2{margin:0 0 4px;font-size:18px;color:var(--navy)}.hint{color:var(--mut);font-size:13.5px;margin:0 0 10px}
+.q{margin:16px 0 0}.q>label.t{display:block;font-weight:600;margin-bottom:6px}.req{color:#c0392b}
+input[type=text],textarea,select{width:100%;padding:10px 12px;border:1px solid #c9d2dc;border-radius:8px;font:inherit;background:#fff}
+textarea{min-height:90px;resize:vertical}input:focus,textarea:focus,select:focus{outline:2px solid var(--teal);border-color:var(--teal)}
+.opt{display:flex;align-items:center;gap:10px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;margin-bottom:6px;cursor:pointer}
+.opt input{accent-color:var(--navy);width:20px;height:20px;flex-shrink:0;margin:0}
+table.grid{width:100%;border-collapse:collapse;font-size:14px}table.grid th,table.grid td{padding:7px 4px;text-align:center;border-bottom:1px solid var(--line)}
+table.grid td:first-child,table.grid th:first-child{text-align:left}table.grid input{accent-color:var(--navy);width:22px;height:22px;margin:0}table.grid label{display:block;padding:6px 0;cursor:pointer}
+.privacy{background:#eef6f9;border-left:4px solid var(--teal);padding:10px 12px;border-radius:6px;font-size:13.5px;margin-top:12px}
+.btn{display:inline-block;background:var(--navy);color:#fff;border:0;border-radius:9px;padding:12px 22px;font:inherit;font-weight:700;cursor:pointer;margin-top:18px}
+.btn:disabled{opacity:.5;cursor:default}.btn.amber{background:var(--amber);color:var(--navy)}
+.err{color:#c0392b;font-weight:600;margin-top:10px}
+.warn{background:#fff6e0;border:2px solid var(--amber);border-radius:12px;padding:16px}.warn h2{color:#8a5a00}
+.warn li{margin:6px 0}
+.quiz{user-select:none;-webkit-user-select:none}
+.top{display:flex;justify-content:space-between;font-weight:700;color:var(--navy)}
+.bar{height:10px;background:#e3e8ee;border-radius:6px;overflow:hidden;margin:8px 0 14px}.bar i{display:block;height:100%;background:var(--teal);width:100%}
+.bar i.low{background:#d9534f}.qt{font-size:18px;font-weight:700;margin:6px 0 10px}
+pre{background:#1e2433;color:#e8edf3;padding:12px 14px;border-radius:8px;font:14px/1.5 Consolas,Menlo,monospace;white-space:pre-wrap;margin:0 0 12px}
+.ans{display:block;width:100%;text-align:left;padding:12px 14px;border:1.5px solid var(--line);border-radius:9px;background:#fff;font:inherit;margin-bottom:8px;cursor:pointer}
+.ans:hover{border-color:var(--teal)}.ans.sel{background:var(--navy);color:#fff;border-color:var(--navy)}
+.ans code,.mono{font-family:Consolas,Menlo,monospace}
+.done{text-align:center}.big{font-size:44px;font-weight:800;color:var(--navy);margin:6px 0}
+.hide{display:none}body.quizmode .hero{display:none}
+@media(max-width:420px){.wrap{padding:12px 12px 40px}.hero{padding:16px}h1{font-size:21px}.card{padding:14px}.qt{font-size:17px}.btn{width:100%;margin-top:12px}}
+.opt.other-on{border-color:var(--amber);background:#fff6e0}
+textarea.own{min-height:70px;margin-top:6px}textarea.own.hl{outline:2px solid var(--amber);border-color:var(--amber)}
+.own-l{display:block;font-weight:600;margin:14px 0 2px;color:var(--teal)}
+.pill{display:inline-block;background:#eef6f9;color:var(--teal);font-size:12px;font-weight:700;padding:2px 9px;border-radius:12px;margin-left:6px;vertical-align:middle}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:0 8px}@media(max-width:520px){.cols{grid-template-columns:1fr}}
+.step{display:flex;gap:12px;align-items:flex-start;margin:12px 0}.num{flex:0 0 34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
+.tag{display:inline-block;font-size:12px;font-weight:700;padding:2px 9px;border-radius:12px;margin-left:6px;vertical-align:middle}.must{background:#fdecea;color:#a12622}.opt2{background:#eef6f9;color:var(--teal)}
+code{word-break:break-word;background:#eef2f6;padding:1px 6px;border-radius:5px;font-size:14px}ul.l{margin:6px 0 0;padding-left:20px}ul.l li{margin:4px 0}
+a.big{display:inline-block;font-size:16px;line-height:1.3;background:var(--amber);color:var(--navy);font-weight:800;text-decoration:none;padding:10px 18px;border-radius:9px;margin-top:8px}
+.check{list-style:none;padding-left:0}.check li{margin:6px 0}.check li:before{content:"☐ ";color:var(--teal);font-weight:700}
+</style></head><body><div class="wrap">
+<div class="hero"><div class="col">RK COLLEGE OF ENGINEERING</div>
+<div class="addr">Kethanakonda (V), Ibrahimpatnam (M), VIJAYAWADA – 521456 · <a href="https://www.rkce.ac.in/" target="_blank">rkce.ac.in</a></div>
+<h1>3-Day Hands-on Workshop</h1>
+<div class="tags"><span>Python</span><span>Full Stack JS</span><span>SQL</span><span>Git</span><span class="a">AWS Cloud</span></div>
+<div class="when"><b>23 – 25 November 2026 (Mon – Wed)</b> · by ILP – Rajeev Kumar's Knowledge World</div></div>
+<div class="card"><h2>🏠 Day 2 Homework</h2><p class="hint">About <b>30–45 minutes</b> tonight. Tomorrow (Day 3) starts at <b>9:30 AM</b> with Bank steps 6–10, the GitHub push and interview practice.</p></div>
+
+<div class="card"><div class="step"><div class="num">1</div><div><h2>Feedback form <span class="tag must">must do · 2 min</span></h2>
+<p>Tell us how far you got today and what to explain tomorrow. Please submit before <b>9 AM tomorrow</b>.</p>
+<a class="big" href="/">Open the feedback form →</a></div></div></div>
+
+<div class="card"><div class="step"><div class="num">2</div><div><h2>Finish your steps <span class="tag must">must do</span></h2>
+<ul class="l"><li>Open your project folder in VS Code (Desktop › workshop › your language › project).</li>
+<li>Finish any <b>grey</b> step in <b>Marks Analyzer</b> or <b>Login</b>.</li>
+<li>Check each one: <code>python step05_show_list.py</code> or <code>node step05_show_list.js</code> should show <b>✅</b>. Java: restart the app and refresh the page.</li>
+<li>Stuck? Write the step number in the feedback form. We will fix it first thing tomorrow.</li></ul></div></div></div>
+
+<div class="card"><div class="step"><div class="num">3</div><div><h2>Get GitHub ready <span class="tag must">must do · 10 min</span></h2>
+<ul class="l"><li>No account? Create one at <b>github.com</b> tonight. Remember your username and password.</li>
+<li>Open <code>commands/03_git_github.txt</code> and do <b>steps 1–3</b> in Git Bash:<br>
+<code>git config --global user.name "Your Full Name"</code><br>
+<code>git config --global user.email "your-github-email@gmail.com"</code></li>
+<li>Tomorrow you push your projects to <b>your own GitHub</b>. Doing this tonight saves time.</li></ul></div></div></div>
+
+<div class="card"><div class="step"><div class="num">4</div><div><h2>Interview prep <span class="tag must">15 min</span></h2>
+<ul class="l"><li>Open <code>workshop/student_docs/ILP_Interview_QA_Handbook.pdf</code> (it's on the pen drive copy on your Desktop).</li>
+<li>Read <b>10 questions</b> and say the answers <b>out loud</b>.</li>
+<li>Tomorrow Jeeva sir asks some of them in a <b>mock interview round</b>.</li></ul></div></div></div>
+
+<div class="card"><div class="step"><div class="num">⭐</div><div><h2>Bonus challenge <span class="tag opt2">optional · fast finishers</span></h2>
+<p>Pick <b>ONE</b> and add it to your Marks Analyzer, with no comment telling you the line this time:</p>
+<ul class="l"><li>Show <b>PASS</b> if marks are 35 or more, and <b>FAIL</b> if less.</li>
+<li>Show the student with the <b>lowest</b> marks (like the topper).</li>
+<li>Count how many students got <b>grade A</b>.</li></ul>
+<p class="hint">Tip: copy a step file (for example <code>step08_topper.py</code>) and change it. Show it to us tomorrow; the best ones get a shout-out in the closing session.</p></div></div></div>
+
+<div class="card"><h2>✅ Tonight's checklist</h2><ul class="check">
+<li>Feedback form submitted</li><li>All Marks Analyzer and Login steps are ✅</li><li>GitHub account ready and git config done</li><li>10 interview answers practised out loud</li><li>(Bonus) one challenge added</li></ul>
+<p class="hint" style="margin-top:14px">Laptop problems? Note them in the feedback form. See you tomorrow at 9:30! – ILP Team</p></div>
+</div></body></html>
