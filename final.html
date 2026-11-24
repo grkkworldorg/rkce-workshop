@@ -1,0 +1,99 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Final Quiz – ILP Workshop, RK College of Engineering</title>
+<style>
+:root{--navy:#21295C;--blue:#065A82;--teal:#1C7293;--amber:#F2A104;--bg:#F4F7F9;--ink:#1d2433;--mut:#5b6474;--line:#dde3ea}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:16px 16px 48px}
+.hero{background:linear-gradient(115deg,var(--navy),var(--blue) 55%,var(--teal));color:#fff;border-radius:14px;padding:22px 22px 18px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-60px;top:-80px;width:220px;height:220px;border-radius:50%;background:rgba(242,161,4,.22)}
+.col{color:var(--amber);font-weight:800;letter-spacing:3px;font-size:13px}.addr{font-size:12.5px;opacity:.8}
+.addr a{color:#fff}h1{font-size:25px;margin:10px 0 8px;line-height:1.2}
+.tags span{display:inline-block;font-size:12.5px;font-weight:700;padding:3px 11px;border-radius:20px;border:1px solid rgba(255,255,255,.4);margin:0 6px 6px 0;background:rgba(255,255,255,.12)}
+.tags span.a{background:var(--amber);border-color:var(--amber);color:var(--navy)}.when{font-size:13.5px;margin-top:4px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin-top:14px}
+.card h2{margin:0 0 4px;font-size:18px;color:var(--navy)}.hint{color:var(--mut);font-size:13.5px;margin:0 0 10px}
+.q{margin:16px 0 0}.q>label.t{display:block;font-weight:600;margin-bottom:6px}.req{color:#c0392b}
+input[type=text],textarea,select{width:100%;padding:10px 12px;border:1px solid #c9d2dc;border-radius:8px;font:inherit;background:#fff}
+textarea{min-height:90px;resize:vertical}input:focus,textarea:focus,select:focus{outline:2px solid var(--teal);border-color:var(--teal)}
+.opt{display:flex;align-items:center;gap:10px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;margin-bottom:6px;cursor:pointer}
+.opt input{accent-color:var(--navy);width:20px;height:20px;flex-shrink:0;margin:0}
+table.grid{width:100%;border-collapse:collapse;font-size:14px}table.grid th,table.grid td{padding:7px 4px;text-align:center;border-bottom:1px solid var(--line)}
+table.grid td:first-child,table.grid th:first-child{text-align:left}table.grid input{accent-color:var(--navy);width:22px;height:22px;margin:0}table.grid label{display:block;padding:6px 0;cursor:pointer}
+.privacy{background:#eef6f9;border-left:4px solid var(--teal);padding:10px 12px;border-radius:6px;font-size:13.5px;margin-top:12px}
+.btn{display:inline-block;background:var(--navy);color:#fff;border:0;border-radius:9px;padding:12px 22px;font:inherit;font-weight:700;cursor:pointer;margin-top:18px}
+.btn:disabled{opacity:.5;cursor:default}.btn.amber{background:var(--amber);color:var(--navy)}
+.err{color:#c0392b;font-weight:600;margin-top:10px}
+.warn{background:#fff6e0;border:2px solid var(--amber);border-radius:12px;padding:16px}.warn h2{color:#8a5a00}
+.warn li{margin:6px 0}
+.quiz{user-select:none;-webkit-user-select:none}
+.top{display:flex;justify-content:space-between;font-weight:700;color:var(--navy)}
+.bar{height:10px;background:#e3e8ee;border-radius:6px;overflow:hidden;margin:8px 0 14px}.bar i{display:block;height:100%;background:var(--teal);width:100%}
+.bar i.low{background:#d9534f}.qt{font-size:18px;font-weight:700;margin:6px 0 10px}
+pre{background:#1e2433;color:#e8edf3;padding:12px 14px;border-radius:8px;font:14px/1.5 Consolas,Menlo,monospace;white-space:pre-wrap;margin:0 0 12px}
+.ans{display:block;width:100%;text-align:left;padding:12px 14px;border:1.5px solid var(--line);border-radius:9px;background:#fff;font:inherit;margin-bottom:8px;cursor:pointer}
+.ans:hover{border-color:var(--teal)}.ans.sel{background:var(--navy);color:#fff;border-color:var(--navy)}
+.ans code,.mono{font-family:Consolas,Menlo,monospace}
+.done{text-align:center}.big{font-size:44px;font-weight:800;color:var(--navy);margin:6px 0}
+.hide{display:none}body.quizmode .hero{display:none}
+@media(max-width:420px){.wrap{padding:12px 12px 40px}.hero{padding:16px}h1{font-size:21px}.card{padding:14px}.qt{font-size:17px}.btn{width:100%;margin-top:12px}}
+.opt.other-on{border-color:var(--amber);background:#fff6e0}
+textarea.own{min-height:70px;margin-top:6px}textarea.own.hl{outline:2px solid var(--amber);border-color:var(--amber)}
+.own-l{display:block;font-weight:600;margin:14px 0 2px;color:var(--teal)}
+.pill{display:inline-block;background:#eef6f9;color:var(--teal);font-size:12px;font-weight:700;padding:2px 9px;border-radius:12px;margin-left:6px;vertical-align:middle}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:0 8px}@media(max-width:520px){.cols{grid-template-columns:1fr}}
+.qn{font-weight:700;color:var(--navy)}.tag2{display:inline-block;font-size:11px;font-weight:700;color:var(--teal);background:#eef6f9;border-radius:10px;padding:1px 8px;margin-left:6px}
+.score{font-size:46px;font-weight:800;color:var(--navy);margin:6px 0}.rv{font-size:14px;margin:6px 0;padding:8px 10px;border-radius:8px}.rv.ok{background:#e7f6ec}.rv.no{background:#fdecea}
+.mono2{font-family:Consolas,monospace}.prog2{position:sticky;top:0;background:var(--bg);padding:8px 0;font-weight:700;color:var(--teal);z-index:2}
+select{width:100%;padding:8px 10px;border:1px solid #c9d2dc;border-radius:8px;font:inherit;background:#fff}.grid3{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:6px 8px;align-items:center}
+.grid3 .h{font-size:13px;font-weight:700;color:var(--mut)}
+</style></head><body><div class="wrap">
+<div class="hero"><div class="col">RK COLLEGE OF ENGINEERING</div>
+<div class="addr">Kethanakonda (V), Ibrahimpatnam (M), VIJAYAWADA – 521456 · <a href="https://www.rkce.ac.in/" target="_blank">rkce.ac.in</a></div>
+<h1>3-Day Hands-on Workshop</h1>
+<div class="tags"><span>Python</span><span>Full Stack JS</span><span>SQL</span><span>Git</span><span class="a">AWS Cloud</span></div>
+<div class="when"><b>23 – 25 November 2026 (Mon – Wed)</b> · by ILP – Rajeev Kumar's Knowledge World</div></div>
+<div id="f">
+<div class="card"><h2>🏁 Final Quiz</h2><p class="hint"><b>20 questions</b> on what we learned in 3 days: Linux, Git, Python/JS, HTML, SQL, APIs and our projects. About <b>10 minutes</b>.</p>
+<p class="hint">You can submit <b>only once</b>. Your score and the correct answers appear right after you submit. Please don't switch tabs or search; this is to help you see what you learned.</p></div>
+<div class="card"><h2>👤 About you</h2>
+<div class="q"><label class="t">Full name <span class="req">*</span></label><input type="text" id="name" maxlength="100"></div>
+<div class="q"><label class="t">Roll number <span class="req">*</span></label><input type="text" id="roll" maxlength="30"></div>
+<div class="q"><label class="t">Your lab <span class="req">*</span></label><div id="lab" class="cols"></div></div></div>
+<div class="prog2" id="prog">0 / 20 answered</div>
+<div id="qs"></div>
+<div class="card"><div id="err" class="err"></div><button class="btn" id="send">Submit quiz ✓</button></div>
+</div>
+<div id="done" class="hide"><div class="card done"><h2>🎉 Quiz submitted</h2><p id="who" class="hint"></p><div class="score" id="score"></div><p id="msg"></p></div>
+<div class="card"><h2>Check your answers</h2><div id="review"></div></div>
+<div class="card done"><p>Next: please fill the <b>final feedback form</b> (3 minutes).</p><a class="btn" href="/feedback.html" style="text-decoration:none">Open feedback form →</a></div></div>
+</div><script>
+var QS=[{"id": "q1", "t": "Linux", "q": "Which command shows the folder you are in right now?", "o": ["pwd", "ls", "cd", "mkdir"]}, {"id": "q2", "t": "Linux", "q": "Which command creates a new folder?", "o": ["mkdir", "touch", "cd", "rm"]}, {"id": "q3", "t": "Git", "q": "Which command saves your staged changes as a version, with a message?", "o": ["git commit -m \"message\"", "git push", "git add .", "git init"]}, {"id": "q4", "t": "Git", "q": "What does git push do?", "o": ["Uploads your commits to GitHub", "Saves a version on your laptop only", "Starts a new repository", "Shows which files changed"]}, {"id": "q5", "t": "Git", "q": "Which file lists folders Git must NOT upload, like node_modules/?", "o": [".gitignore", "README.md", "package.json", "pom.xml"]}, {"id": "q6", "t": "JavaScript", "q": "In JavaScript, what is the result of 5 === \"5\"?", "o": ["false", "true", "error", "undefined"]}, {"id": "q7", "t": "Python", "q": "Which Python type cannot be changed after it is created?", "o": ["tuple", "list", "dict", "set"]}, {"id": "q8", "t": "Programming", "q": "What does return do inside a function?", "o": ["Sends a value back and ends the function", "Prints the value on the screen", "Repeats the function", "Imports a library"]}, {"id": "q9", "t": "HTML", "q": "Which HTML tag makes a box where the user can type?", "o": ["<input>", "<h1>", "<li>", "<footer>"]}, {"id": "q10", "t": "HTML", "q": "What does type=\"password\" do on an input box?", "o": ["Hides the typed text behind dots", "Makes the box required", "Encrypts the password in the database", "Makes the text bold"]}, {"id": "q11", "t": "SQL", "q": "Which SQL command reads data from a table?", "o": ["SELECT", "INSERT", "UPDATE", "DELETE"]}, {"id": "q12", "t": "SQL", "q": "Which SQL command adds a new row to a table?", "o": ["INSERT INTO", "SELECT", "ALTER TABLE", "DROP TABLE"]}, {"id": "q13", "t": "SQL", "q": "What is a primary key?", "o": ["A column that uniquely identifies each row", "A column that links to another table", "A command that sorts rows", "A place to store passwords"]}, {"id": "q14", "t": "API", "q": "In CRUD, \"Update\" matches which HTTP method?", "o": ["PUT", "GET", "POST", "DELETE"]}, {"id": "q15", "t": "API", "q": "Which status code means a new record was Created?", "o": ["201", "200", "404", "500"]}, {"id": "q16", "t": "API", "q": "What does status code 404 mean?", "o": ["Not found", "Success", "The server crashed", "Wrong password"]}, {"id": "q17", "t": "API", "q": "Which tool did we use to call our own API from the terminal?", "o": ["curl", "git", "npm", "pip"]}, {"id": "q18", "t": "Labs", "q": "\"Port 8080 was already in use\" means:", "o": ["Another app is already running on that port", "The internet is down", "Java is not installed", "The password is wrong"]}, {"id": "q19", "t": "Labs", "q": "In the Bank app, which check stops you withdrawing more money than you have?", "o": ["amount <= balance", "amount > 0", "balance == 0", "amount >= balance"]}, {"id": "q20", "t": "OOP", "q": "In object-oriented programming, an object is:", "o": ["An instance created from a class", "A blueprint for a class", "A type of loop", "A database table"]}];
+var API="https://script.google.com/macros/s/AKfycbymDI50T5zCIYdEtwbAW3oaHLtmL-b_WIbdEqTvm_QH1tvbTLLxRcUaMxkLCcBXbFy1/exec";
+var switches=0;document.addEventListener("visibilitychange",function(){if(document.hidden)switches++});
+function $(id){return document.getElementById(id)}
+function esc(t){return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+["Python","Node.js","Java"].forEach(function(v){var l=document.createElement("label");l.className="opt";l.innerHTML='<input type="radio" name="lab" value="'+v+'">'+v;$("lab").appendChild(l)});
+QS.forEach(function(q,i){var c=document.createElement("div");c.className="card";
+ var h='<div class="q"><label class="t"><span class="qn">'+(i+1)+'.</span> '+esc(q.q)+' <span class="tag2">'+q.t+'</span></label>';
+ shuffle(q.o).forEach(function(o){h+='<label class="opt"><input type="radio" name="'+q.id+'" value="'+esc(o)+'"><span>'+esc(o)+'</span></label>'});
+ c.innerHTML=h+'</div>';$("qs").appendChild(c)});
+function val(n){var e=document.querySelector("input[name=\""+n+"\"]:checked");return e?e.value:""}
+function count(){var n=0;QS.forEach(function(q){if(val(q.id))n++});$("prog").textContent=n+" / 20 answered";return n}
+document.addEventListener("change",count);
+$("send").onclick=function(){var b=this;$("err").textContent="";
+ var name=$("name").value.trim(),roll=$("roll").value.trim(),lab=val("lab"),e=[];
+ if(!name)e.push("Full name");if(!roll)e.push("Roll number");if(!lab)e.push("Lab");
+ if(e.length){$("err").textContent="Please fill: "+e.join(", ");window.scrollTo(0,0);return}
+ var n=count();if(n<20&&!confirm("You answered "+n+" of 20. Submit anyway?"))return;
+ var ans={};QS.forEach(function(q){ans[q.id]=val(q.id)});
+ b.disabled=true;b.textContent="Submitting…";
+ fetch(API,{method:"POST",body:JSON.stringify({action:"final",p:{name:name,roll:roll,lab:lab,answers:ans,switches:switches}}),headers:{"Content-Type":"text/plain;charset=utf-8"},credentials:"omit",redirect:"follow"})
+ .then(function(x){return x.json()}).then(function(j){if(j.err)throw new Error(j.err);var r=j.ok;
+  $("who").textContent=name+" · "+roll.toUpperCase();$("score").textContent=r.score+" / "+r.total;
+  $("msg").textContent=r.already?"You already submitted this quiz earlier. This is your first score.":(r.score>=16?"Excellent work! 🌟":r.score>=12?"Good job! Revise the ones in red.":"Good start. Revise the red ones with the handbook.");
+  var h="";QS.forEach(function(q,i){var mine=ans[q.id]||"(no answer)",ok=mine===r.key[q.id];
+   h+='<div class="rv '+(ok?"ok":"no")+'"><b>'+(i+1)+'. '+esc(q.q)+'</b><br>'+(ok?"✅ ":"❌ Your answer: "+esc(mine)+"<br>✔️ Correct: ")+esc(r.key[q.id])+'</div>'});
+  $("review").innerHTML=h;$("f").className="hide";$("done").className="";window.scrollTo(0,0)})
+ .catch(function(err){$("err").textContent=(err&&err.message&&err.message.indexOf("fetch")<0)?err.message:"Network problem. Please check your internet and try again.";})
+ .finally(function(){b.disabled=false;b.textContent="Submit quiz ✓"})};
+</script></body></html>
