@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Day 1 Homework – ILP Workshop, RK College of Engineering</title>
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Day 2 Feedback – ILP Workshop, RK College of Engineering</title>
 <style>
 :root{--navy:#21295C;--blue:#065A82;--teal:#1C7293;--amber:#F2A104;--bg:#F4F7F9;--ink:#1d2433;--mut:#5b6474;--line:#dde3ea}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
@@ -47,101 +47,86 @@ textarea.own{min-height:70px;margin-top:6px}textarea.own.hl{outline:2px solid va
 <div class="tags"><span>Python</span><span>Full Stack JS</span><span>SQL</span><span>Git</span><span class="a">AWS Cloud</span></div>
 <div class="when"><b>23 – 25 November 2026 (Mon – Wed)</b> · by ILP – Rajeev Kumar's Knowledge World</div></div>
 <div id="f">
-<div class="card"><h2>📝 Day 1 Homework</h2><p class="hint">Tell us your problems, your product idea, and what you want to learn. About <b>4 minutes</b>. Please submit by <b>Tuesday, 24 November, 9:00 AM</b>.</p>
-<p class="hint">Every part has a box to <b>write your own points</b>. Only the 3 questions marked <span class="req">*</span> are required. Write in simple English; Telugu words are fine too.</p>
-<div class="privacy"><b>Privacy:</b> we do <b>not</b> collect phone numbers or email addresses. Your <b>problems are shown without names</b>. Product ideas may be read out on Day 3 with your name.</div></div>
+<div class="card"><h2>📝 Day 2 Feedback</h2><p class="hint">Tell us how far you got today and what to explain tomorrow. About <b>2 minutes</b>. Please submit by <b>Wednesday, 25 November, 9:00 AM</b>.</p>
+<p class="hint">Only the 3 questions marked <span class="req">*</span> are required. Simple English is fine.</p>
+<div class="privacy"><b>Privacy:</b> we do <b>not</b> collect phone numbers or email addresses.</div></div>
 
-<div class="card"><h2>👤 Part 1 · About you</h2>
+<div class="card"><h2>👤 About you</h2>
 <div class="q"><label class="t">Full name <span class="req">*</span></label><input type="text" id="name" maxlength="100"></div>
 <div class="q"><label class="t">Roll number <span class="req">*</span></label><input type="text" id="roll" maxlength="30"></div>
-<div class="q"><label class="t">Branch</label><div class="opt" style="cursor:default"><input type="radio" checked disabled> CSE</div></div>
-<div class="q"><label class="t">Your lab <span class="req">*</span></label><div id="lab" class="cols"></div></div>
-<div class="q"><label class="t">Team number <span class="pill">optional</span></label><input type="text" id="team" maxlength="10" placeholder="e.g. 4"></div>
-<label class="own-l" for="about">✍️ Tell us about yourself <span class="pill">optional</span></label>
-<textarea id="about" class="own" maxlength="1000" placeholder="Your hobbies, goals, dream job, anything you want us to know"></textarea>
+<div class="q"><label class="t">Your lab today <span class="req">*</span></label><div id="lab" class="cols"></div></div>
 </div>
 
-<div class="card"><h2>🧱 Part 2 · My problems <span class="pill">shown without names</span></h2>
-<div class="q"><label class="t">What stops you in coding, studies or interviews? Tick all that apply.</label><div id="problems"></div></div>
-<label class="own-l" for="ownProblems">✍️ Write your own problems <span class="pill">optional</span></label>
-<textarea id="ownProblems" class="own" maxlength="2000" placeholder="Any problem, in your own words. One per line is fine."></textarea>
+<div class="card"><h2>🧱 1 · How far did you get today?</h2>
+<div class="q"><label class="t">Marks Analyzer</label><div id="marks" class="cols"></div></div>
+<div class="q"><label class="t">Login</label><div id="login" class="cols"></div></div>
+<div class="q"><label class="t">Bank (steps 1–5)</label><div id="bank" class="cols"></div></div>
+<div class="q"><label class="t">2 · Which step did you get stuck on?</label><input type="text" id="stuck" maxlength="300" placeholder="e.g. Login step 7, or: running mvn"></div>
 </div>
 
-<div class="card"><h2>💡 Part 3 · My product idea</h2><p class="hint">Think of a problem you see around you: college, home, village, shops, farming. How can an app solve it?</p>
-<div class="q"><label class="t">Idea name</label><input type="text" id="ideaName" maxlength="120" placeholder="e.g. Hostel Mess Feedback App"></div>
-<div class="q"><label class="t">The problem: what is wrong today?</label><textarea id="ideaProblem" maxlength="1000"></textarea></div>
-<div class="q"><label class="t">Who has this problem?</label><input type="text" id="ideaWho" maxlength="300" placeholder="e.g. students, farmers, shop owners"></div>
-<div class="q"><label class="t">Your solution, in 2–3 lines</label><textarea id="ideaSolution" maxlength="1500"></textarea></div>
-<div class="q"><label class="t">Main feature: the one thing it must do</label><input type="text" id="ideaFeature" maxlength="500"></div>
-<div class="q"><label class="t">Can you build it with what we learn in this workshop?</label><div id="canBuild" class="cols"></div></div>
-<div class="q"><label class="t">Category</label><div id="category" class="cols"></div></div>
-<label class="own-l" for="otherIdeas">✍️ Any other ideas or points <span class="pill">optional</span></label>
-<textarea id="otherIdeas" class="own" maxlength="2000" placeholder="A second idea, extra features, anything else"></textarea>
+<div class="card"><h2>⭐ 3–4 · Today</h2>
+<div class="q"><label class="t">Today compared to yesterday</label><div id="compare" class="cols"></div></div>
+<div class="q"><label class="t">Rate today</label><div id="rating" class="cols"></div></div>
 </div>
 
-<div class="card"><h2>🎯 Part 4 · Learning & expectations</h2>
-<div class="q"><label class="t">What do you want to learn next? Tick all that apply.</label><div id="learn" class="cols"></div></div>
-<label class="own-l" for="ownLearn">✍️ Other things I want to learn <span class="pill">optional</span></label>
-<textarea id="ownLearn" class="own" maxlength="1000"></textarea>
-<div class="q"><label class="t">What do you expect from us (ILP)? Tick all that apply.</label><div id="expect"></div></div>
-<label class="own-l" for="ownExpect">✍️ What else do you expect from us? <span class="pill">optional</span></label>
-<textarea id="ownExpect" class="own" maxlength="1500"></textarea>
+<div class="card"><h2>💡 5–6 · Understanding</h2>
+<div class="q"><label class="t">What did you understand clearly today? Tick all that apply.</label><div id="understood" class="cols"></div></div>
+<div class="q"><label class="t">What is still confusing? Tick all that apply.</label><div id="confusing" class="cols"></div></div>
 </div>
 
-<div class="card"><h2>🗣️ Part 5 · Day 1 feedback</h2>
-<div class="q"><label class="t">Today was:</label><div id="pace" class="cols"></div></div>
-<div class="q"><label class="t">One thing to explain again tomorrow</label><input type="text" id="explainAgain" maxlength="500"></div>
-<label class="own-l" for="ownFeedback">✍️ Your feedback in your own words <span class="pill">optional</span></label>
-<textarea id="ownFeedback" class="own" maxlength="2000" placeholder="What you liked, what was hard, what we should change"></textarea>
+<div class="card"><h2>💻 7–8 · Laptop and GitHub</h2>
+<div class="q"><label class="t">Did your laptop work?</label><div id="laptop"></div>
+<textarea id="laptopProblem" class="own hide" maxlength="500" placeholder="What was the problem? (e.g. mvn not found, port 8080 in use)"></textarea></div>
+<div class="q"><label class="t">Did you push your code to GitHub?</label><div id="github"></div></div>
+</div>
+
+<div class="card"><h2>🎯 9–10 · You and tomorrow</h2>
+<div class="q"><label class="t">One thing you learned today, in your own words</label><textarea id="learned" maxlength="1000"></textarea></div>
+<div class="q"><label class="t">What do you want most tomorrow? Tick up to 2.</label><div id="want" class="cols"></div></div>
+<label class="own-l" for="other">✍️ Anything else? Tell us in your own words <span class="pill">optional</span></label>
+<textarea id="other" class="own" maxlength="2000"></textarea>
 <div id="err" class="err"></div>
-<button class="btn" id="send">Submit homework ✓</button>
+<button class="btn" id="send">Submit feedback ✓</button>
 </div></div>
 
-<div id="done" class="hide"><div class="card done"><h2>✅ Thank you!</h2><p id="doneMsg">Your homework is submitted.</p>
-<p class="hint">Want to change something? Just fill the form again with the same roll number. Your latest answers will be kept.</p>
+<div id="done" class="hide"><div class="card done"><h2>✅ Thank you!</h2><p id="doneMsg">Your feedback is submitted.</p>
+<p class="hint">Want to change something? Fill the form again with the same roll number. Your latest answers will be kept.</p>
 <button class="btn" id="again" style="background:#6b7480">Edit my answers</button>
-<p class="hint" style="margin-top:16px">See you tomorrow. – ILP Team</p></div></div>
+<p class="hint" style="margin-top:16px">See you tomorrow for the final day! – ILP Team</p></div></div>
 </div><script>
-var LABS=[["Python","Python lab"],["React","React lab"]];
-var PROBLEMS=["I can't start coding on my own","I don't understand error messages","English / speaking","Fear of interviews","Aptitude","No projects for my resume","I don't know what to learn next","Laptop or internet problems","Other"];
-var CANBUILD=["Yes","Partly","Not sure"];
-var CATS=["Education","Health","Farming","College life","Shopping","Money","Jobs","Other"];
-var LEARN=["Python (deeper)","Java","React / web development","Node / backend","SQL / databases","Cloud (AWS / Azure)","DevOps / Git / Linux","Data analysis / AI / ML","Cyber security","Aptitude","English / speaking","Interview preparation","Other"];
-var EXPECT=["More workshops like this","Internship / live project","Placement training","Mock interviews","Resume and LinkedIn help","Certificate course","Doubt support after the workshop","Other"];
-var PACE=["Too fast","Just right","Too slow"];
-// which "write your own" box goes with which tick-list
-var OWN={problems:"ownProblems",learn:"ownLearn",expect:"ownExpect",category:"otherIdeas"};
+var LABS=["Python","Node.js","Java"];
+var MARKS=["Not started","Steps 1–5","Steps 6–9","All 10 ✅"];
+var LOGIN=MARKS;
+var BANK=["Not started","Steps 1–2","Steps 3–4","All 5 ✅"];
+var COMPARE=["Much better","Better","Same","Worse"];
+var RATING=["1","2","3","4","5"];
+var TOPICS=["Step files (YOUR CODE HERE)","Running the app (final.py / node / mvn)","SQL CRUD","API calls (GET POST PUT DELETE)","curl","Git / GitHub","Login logic","Bank logic"];
+var LAPTOP=["Yes, fully","Some problems","Big problems"];
+var GITHUB=["Yes","Not yet","I don't have a GitHub account"];
+var WANT=["Finish my projects","Git / GitHub push","Interview practice","More API / CRUD","Java vs Python: which path?","Resume help"];
 function $(id){return document.getElementById(id)}
-function build(box,type,items){items.forEach(function(it){var v=Array.isArray(it)?it[0]:it,t=Array.isArray(it)?it[1]:it;
- var l=document.createElement("label");l.className="opt";var i=document.createElement("input");i.type=type;i.name=box;i.value=v;
- l.appendChild(i);l.appendChild(document.createTextNode(t));$(box).appendChild(l);});}
+function build(box,type,items){items.forEach(function(v){var l=document.createElement("label");l.className="opt";var i=document.createElement("input");i.type=type;i.name=box;i.value=v;l.appendChild(i);l.appendChild(document.createTextNode(type==="radio"&&box==="rating"?"⭐ "+v:v));$(box).appendChild(l);});}
 function one(n){var e=document.querySelector("input[name=\""+n+"\"]:checked");return e?e.value:""}
 function many(n){return [].slice.call(document.querySelectorAll("input[name=\""+n+"\"]:checked")).map(function(i){return i.value})}
-build("lab","radio",LABS);build("problems","checkbox",PROBLEMS);build("canBuild","radio",CANBUILD);
-build("category","radio",CATS);build("learn","checkbox",LEARN);build("expect","checkbox",EXPECT);build("pace","radio",PACE);
-function refresh(){
- document.querySelectorAll(".opt").forEach(function(l){var i=l.querySelector("input");l.classList.toggle("other-on",i.value==="Other"&&i.checked)});
- Object.keys(OWN).forEach(function(k){if(!OWN[k])return;var on=document.querySelector("input[name=\""+k+"\"][value=Other]:checked");
-  var ta=$(OWN[k]);ta.classList.toggle("hl",!!on);if(on&&!ta.value)ta.placeholder="You ticked Other. Please write it here.";});}
-document.addEventListener("change",refresh);
+build("lab","radio",LABS);build("marks","radio",MARKS);build("login","radio",LOGIN);build("bank","radio",BANK);
+build("compare","radio",COMPARE);build("rating","radio",RATING);build("understood","checkbox",TOPICS);build("confusing","checkbox",TOPICS);
+build("laptop","radio",LAPTOP);build("github","radio",GITHUB);build("want","checkbox",WANT);
+document.addEventListener("change",function(e){
+ var lp=one("laptop");$("laptopProblem").className="own"+(lp&&lp!=="Yes, fully"?"":" hide");
+ if(e.target.name==="want"){var w=document.querySelectorAll("input[name=want]:checked");if(w.length>2)e.target.checked=false;}
+});
 function v(id){return $(id).value.trim()}
-function collect(){var e=[];var name=v("name"),roll=v("roll");if(!name)e.push("Full name");if(!roll)e.push("Roll number");
-var br="CSE";var lab=one("lab");if(!lab)e.push("Lab");
- if(e.length){$("err").textContent="Please fill: "+e.join(", ")+" (in Part 1)";return null}
- return{name:name,roll:roll,branch:br,lab:lab,team:v("team"),about:v("about"),
-  problems:many("problems"),ownProblems:v("ownProblems"),
-  ideaName:v("ideaName"),ideaProblem:v("ideaProblem"),ideaWho:v("ideaWho"),ideaSolution:v("ideaSolution"),ideaFeature:v("ideaFeature"),
-  canBuild:one("canBuild"),category:one("category"),otherIdeas:v("otherIdeas"),
-  learn:many("learn"),ownLearn:v("ownLearn"),expect:many("expect"),ownExpect:v("ownExpect"),
-  pace:one("pace"),explainAgain:v("explainAgain"),ownFeedback:v("ownFeedback")}}
+function collect(){var e=[];var name=v("name"),roll=v("roll"),lab=one("lab");if(!name)e.push("Full name");if(!roll)e.push("Roll number");if(!lab)e.push("Lab");
+ if(e.length){$("err").textContent="Please fill: "+e.join(", ")+" (in About you)";return null}
+ return{name:name,roll:roll,lab:lab,marks:one("marks"),login:one("login"),bank:one("bank"),stuck:v("stuck"),compare:one("compare"),rating:one("rating"),
+  understood:many("understood"),confusing:many("confusing"),laptop:one("laptop"),laptopProblem:v("laptopProblem"),github:one("github"),
+  learned:v("learned"),want:many("want"),other:v("other")}}
 var API="https://script.google.com/macros/s/AKfycbymDI50T5zCIYdEtwbAW3oaHLtmL-b_WIbdEqTvm_QH1tvbTLLxRcUaMxkLCcBXbFy1/exec";
-$("send").onclick=function(){var b=this;$("err").textContent="";var p=collect();if(!p)return;
- b.disabled=true;b.textContent="Submitting…";
- fetch(API,{method:"POST",body:JSON.stringify({action:"homework",p:p}),headers:{"Content-Type":"text/plain;charset=utf-8"},credentials:"omit",redirect:"follow"})
+$("send").onclick=function(){var b=this;$("err").textContent="";var p=collect();if(!p)return;b.disabled=true;b.textContent="Submitting…";
+ fetch(API,{method:"POST",body:JSON.stringify({action:"day2",p:p}),headers:{"Content-Type":"text/plain;charset=utf-8"},credentials:"omit",redirect:"follow"})
  .then(function(x){return x.json()}).then(function(j){if(j.err)throw new Error(j.err);
-   $("doneMsg").textContent=j.ok&&j.ok.updated?"Your answers are updated.":"Your homework is submitted.";
-   $("f").className="hide";$("done").className="";window.scrollTo(0,0)})
+   $("doneMsg").textContent=j.ok&&j.ok.updated?"Your answers are updated.":"Your feedback is submitted.";$("f").className="hide";$("done").className="";window.scrollTo(0,0)})
  .catch(function(err){$("err").textContent=(err&&err.message&&err.message.indexOf("fetch")<0)?err.message:"Network problem. Please check your internet and try again.";})
- .finally(function(){b.disabled=false;b.textContent="Submit homework ✓"})};
+ .finally(function(){b.disabled=false;b.textContent="Submit feedback ✓"})};
 $("again").onclick=function(){$("done").className="hide";$("f").className="";window.scrollTo(0,0)};
 </script></body></html>
