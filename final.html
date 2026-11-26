@@ -1,4 +1,5 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Final Quiz – ILP Workshop, RK College of Engineering</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Final Exam – ILP Workshop, RK College of Engineering</title><meta name="robots" content="noindex">
 <style>
 :root{--navy:#21295C;--blue:#065A82;--teal:#1C7293;--amber:#F2A104;--bg:#F4F7F9;--ink:#1d2433;--mut:#5b6474;--line:#dde3ea}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
@@ -45,55 +46,143 @@ textarea.own{min-height:70px;margin-top:6px}textarea.own.hl{outline:2px solid va
 .mono2{font-family:Consolas,monospace}.prog2{position:sticky;top:0;background:var(--bg);padding:8px 0;font-weight:700;color:var(--teal);z-index:2}
 select{width:100%;padding:8px 10px;border:1px solid #c9d2dc;border-radius:8px;font:inherit;background:#fff}.grid3{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:6px 8px;align-items:center}
 .grid3 .h{font-size:13px;font-weight:700;color:var(--mut)}
-</style></head><body><div class="wrap">
-<div class="hero"><div class="col">RK COLLEGE OF ENGINEERING</div>
-<div class="addr">Kethanakonda (V), Ibrahimpatnam (M), VIJAYAWADA – 521456 · <a href="https://www.rkce.ac.in/" target="_blank">rkce.ac.in</a></div>
-<h1>3-Day Hands-on Workshop</h1>
-<div class="tags"><span>Python</span><span>Full Stack JS</span><span>SQL</span><span>Git</span><span class="a">AWS Cloud</span></div>
-<div class="when"><b>23 – 25 November 2026 (Mon – Wed)</b> · by ILP – Rajeev Kumar's Knowledge World</div></div>
-<div id="f">
-<div class="card"><h2>🏁 Final Quiz</h2><p class="hint"><b>20 questions</b> on what we learned in 3 days: Linux, Git, Python/JS, HTML, SQL, APIs and our projects. About <b>10 minutes</b>.</p>
-<p class="hint">You can submit <b>only once</b>. Your score and the correct answers appear right after you submit. Please don't switch tabs or search; this is to help you see what you learned.</p></div>
-<div class="card"><h2>👤 About you</h2>
-<div class="q"><label class="t">Full name <span class="req">*</span></label><input type="text" id="name" maxlength="100"></div>
-<div class="q"><label class="t">Roll number <span class="req">*</span></label><input type="text" id="roll" maxlength="30"></div>
-<div class="q"><label class="t">Your lab <span class="req">*</span></label><div id="lab" class="cols"></div></div></div>
-<div class="prog2" id="prog">0 / 20 answered</div>
-<div id="qs"></div>
-<div class="card"><div id="err" class="err"></div><button class="btn" id="send">Submit quiz ✓</button></div>
+
+.hero h1,.hero .col{padding-right:58px}
+.hero .lg{position:absolute;right:18px;top:16px;width:46px;height:46px;background:#fff;border-radius:10px;padding:4px;z-index:1}
+.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{border:1.5px solid #c9d2dc;background:#fff;border-radius:22px;padding:8px 16px;font:inherit;font-weight:600;cursor:pointer;color:var(--ink)}
+.chip.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.pills{display:flex;flex-wrap:wrap;gap:6px}.pill input{position:absolute;opacity:0;pointer-events:none}.pill span{display:inline-block;min-width:42px;text-align:center;padding:8px 10px;border:1.5px solid #c9d2dc;border-radius:8px;cursor:pointer;font-weight:700;background:#fff}
+.pill input:checked+span{background:var(--navy);color:#fff;border-color:var(--navy)}.pills.sm .pill span{min-width:34px;padding:7px 6px}
+.promise{background:#f2f5f8;border-left:4px solid var(--amber);padding:10px 12px;border-radius:6px;font-weight:600;margin:4px 0 8px;user-select:none;-webkit-user-select:none}
+.qcard{position:relative}.qhead{display:flex;gap:14px;align-items:flex-start}
+.ring{position:relative;width:56px;height:56px;flex:none}.ring svg{width:56px;height:56px;transform:rotate(-90deg)}
+.ring .rb{fill:none;stroke:#e3e8ee;stroke-width:4}.ring .rf{fill:none;stroke:var(--teal);stroke-width:4;stroke-linecap:round;transition:stroke-dashoffset .25s linear}
+.ring .rf.low{stroke:#d9534f}.ring b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--navy)}
+.top #tot{font-variant-numeric:tabular-nums}
+.steps li{margin:10px 0}.steps .btn{margin:8px 0 0;display:inline-block;text-decoration:none}
+.repo{font:700 22px Consolas,Menlo,monospace;color:var(--navy);background:#fff6e0;border:2px dashed var(--amber);border-radius:10px;padding:10px;text-align:center;margin:6px 0}
+table.grid.left td,table.grid.left th{text-align:left;padding:7px 6px}
+.contact{background:#eaf7ef;border-color:#9fd3b2}.btn.wa{background:#1f9d55;text-decoration:none}
+.testi{border:2px solid var(--amber)}.testi textarea{min-height:110px}
+a.btn{text-decoration:none}
+</style></head><body>
+<div class="hero"><img src="https://grkkw.in/logo.png" alt="" class="lg" onerror="this.remove()"><div class="col">ILP · RK COLLEGE OF ENGINEERING</div>
+<h1>Final Exam · Hands-on Certificate</h1><div class="tags"><span class="a">20 questions</span><span class="">Timed</span><span class="">Programming · Aptitude · English</span></div><div class="when">20 questions · about 10–12 minutes · one attempt only</div></div>
+<div class="wrap">
+<div id="s1">
+ <div class="card warn"><h2>Read this first</h2><ul>
+  <li>Every student gets a <b>different paper</b>.</li>
+  <li>Each question has its <b>own timer</b>. Some are short, some are longer. When the time ends, the exam moves to the next question.</li>
+  <li><b>You cannot go back</b> to a question.</li>
+  <li>Stay on this page. Do not open other tabs or apps.</li>
+  <li>Use of ChatGPT or any AI tool means <b>no Hands-on Achievement certificate</b>.</li>
+  <li>One attempt only. Refreshing the page does not give you a new paper or more time.</li>
+ </ul></div>
+ <div class="card"><h2>Your details</h2>
+  <div class="q"><label class="t" for="nm">Full name <span class="req">*</span></label><input type="text" id="nm" maxlength="100" autocomplete="name"></div>
+  <div class="q"><label class="t" for="rl">Roll number <span class="req">*</span></label><input type="text" id="rl" maxlength="30" autocapitalize="characters"></div>
+  <div class="q"><label class="t">Which language did you use in the lab? <span class="req">*</span></label><div class="chips" id="lab"></div>
+   <p class="hint">Your programming questions will be in this language.</p></div>
+  <div class="q"><label class="t" for="dc">Type this promise exactly <span class="req">*</span></label>
+   <p class="promise">I will answer this exam myself, without ChatGPT, any AI tool or help from anyone.</p><textarea id="dc" class="own" placeholder="Type the sentence above (copy-paste is turned off)"></textarea></div>
+  <p class="err" id="e1"></p>
+  <button class="btn amber" id="go">Start the exam</button>
+ </div>
 </div>
-<div id="done" class="hide"><div class="card done"><h2>🎉 Quiz submitted</h2><p id="who" class="hint"></p><div class="score" id="score"></div><p id="msg"></p></div>
-<div class="card"><h2>Check your answers</h2><div id="review"></div></div>
-<div class="card done"><p>Next: please fill the <b>final feedback form</b> (3 minutes).</p><a class="btn" href="/feedback.html" style="text-decoration:none">Open feedback form →</a></div></div>
-</div><script>
-var QS=[{"id": "q1", "t": "Linux", "q": "Which command shows the folder you are in right now?", "o": ["pwd", "ls", "cd", "mkdir"]}, {"id": "q2", "t": "Linux", "q": "Which command creates a new folder?", "o": ["mkdir", "touch", "cd", "rm"]}, {"id": "q3", "t": "Git", "q": "Which command saves your staged changes as a version, with a message?", "o": ["git commit -m \"message\"", "git push", "git add .", "git init"]}, {"id": "q4", "t": "Git", "q": "What does git push do?", "o": ["Uploads your commits to GitHub", "Saves a version on your laptop only", "Starts a new repository", "Shows which files changed"]}, {"id": "q5", "t": "Git", "q": "Which file lists folders Git must NOT upload, like node_modules/?", "o": [".gitignore", "README.md", "package.json", "pom.xml"]}, {"id": "q6", "t": "JavaScript", "q": "In JavaScript, what is the result of 5 === \"5\"?", "o": ["false", "true", "error", "undefined"]}, {"id": "q7", "t": "Python", "q": "Which Python type cannot be changed after it is created?", "o": ["tuple", "list", "dict", "set"]}, {"id": "q8", "t": "Programming", "q": "What does return do inside a function?", "o": ["Sends a value back and ends the function", "Prints the value on the screen", "Repeats the function", "Imports a library"]}, {"id": "q9", "t": "HTML", "q": "Which HTML tag makes a box where the user can type?", "o": ["<input>", "<h1>", "<li>", "<footer>"]}, {"id": "q10", "t": "HTML", "q": "What does type=\"password\" do on an input box?", "o": ["Hides the typed text behind dots", "Makes the box required", "Encrypts the password in the database", "Makes the text bold"]}, {"id": "q11", "t": "SQL", "q": "Which SQL command reads data from a table?", "o": ["SELECT", "INSERT", "UPDATE", "DELETE"]}, {"id": "q12", "t": "SQL", "q": "Which SQL command adds a new row to a table?", "o": ["INSERT INTO", "SELECT", "ALTER TABLE", "DROP TABLE"]}, {"id": "q13", "t": "SQL", "q": "What is a primary key?", "o": ["A column that uniquely identifies each row", "A column that links to another table", "A command that sorts rows", "A place to store passwords"]}, {"id": "q14", "t": "API", "q": "In CRUD, \"Update\" matches which HTTP method?", "o": ["PUT", "GET", "POST", "DELETE"]}, {"id": "q15", "t": "API", "q": "Which status code means a new record was Created?", "o": ["201", "200", "404", "500"]}, {"id": "q16", "t": "API", "q": "What does status code 404 mean?", "o": ["Not found", "Success", "The server crashed", "Wrong password"]}, {"id": "q17", "t": "API", "q": "Which tool did we use to call our own API from the terminal?", "o": ["curl", "git", "npm", "pip"]}, {"id": "q18", "t": "Labs", "q": "\"Port 8080 was already in use\" means:", "o": ["Another app is already running on that port", "The internet is down", "Java is not installed", "The password is wrong"]}, {"id": "q19", "t": "Labs", "q": "In the Bank app, which check stops you withdrawing more money than you have?", "o": ["amount <= balance", "amount > 0", "balance == 0", "amount >= balance"]}, {"id": "q20", "t": "OOP", "q": "In object-oriented programming, an object is:", "o": ["An instance created from a class", "A blueprint for a class", "A type of loop", "A database table"]}];
-var API="https://script.google.com/macros/s/AKfycbymDI50T5zCIYdEtwbAW3oaHLtmL-b_WIbdEqTvm_QH1tvbTLLxRcUaMxkLCcBXbFy1/exec";
-var switches=0;document.addEventListener("visibilitychange",function(){if(document.hidden)switches++});
+<div id="s2" class="hide quiz">
+ <div class="top"><span id="qn">Question 1 / 20</span><span id="tot">⏱ Total 10:00</span></div>
+ <div class="bar"><i id="pb"></i></div>
+ <div class="card qcard">
+  <div class="qhead"><div class="ring"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="19" class="rb"/><circle cx="22" cy="22" r="19" class="rf" id="rf"/></svg><b id="rs">30</b></div>
+   <div class="qt" id="qt"></div></div>
+  <pre id="qc" class="hide"></pre>
+  <div id="qo"></div>
+  <button class="btn" id="nx" disabled>Save and next ▶</button>
+  <p class="hint" style="margin-top:10px">You can't come back to this question.</p>
+ </div>
+</div>
+<div id="s3" class="hide">
+ <div class="card done"><h2 id="rh">Exam submitted</h2><div class="big" id="sc"></div><p id="rt"></p></div>
+ <div class="card"><h2>Next: 2 more steps for your certificate</h2>
+  <ol class="steps"><li><b>Feedback form</b>: 3 minutes, do it now. <a class="btn amber" href="feedback.html">Open feedback form</a></li>
+  <li><b>Your GitHub repo</b> with all 3 projects, by <b>1 December, 11:59 PM</b>. <a class="btn" href="repo.html">How to submit</a></li></ol></div>
+ <div id="wa" class="hide"><h2>Stay in touch with Rajeev sir</h2><p class="hint">Questions about jobs, projects or what to learn next? Message on WhatsApp.</p><a class="btn wa" target="_blank" rel="noopener">💬 WhatsApp Rajeev sir</a></div>
+</div>
+</div>
+<script>
+var API="https://script.google.com/macros/s/AKfycbymDI50T5zCIYdEtwbAW3oaHLtmL-b_WIbdEqTvm_QH1tvbTLLxRcUaMxkLCcBXbFy1/exec",WA="918096738352";
 function $(id){return document.getElementById(id)}
-function esc(t){return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
-function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
-["Python","Node.js","Java"].forEach(function(v){var l=document.createElement("label");l.className="opt";l.innerHTML='<input type="radio" name="lab" value="'+v+'">'+v;$("lab").appendChild(l)});
-QS.forEach(function(q,i){var c=document.createElement("div");c.className="card";
- var h='<div class="q"><label class="t"><span class="qn">'+(i+1)+'.</span> '+esc(q.q)+' <span class="tag2">'+q.t+'</span></label>';
- shuffle(q.o).forEach(function(o){h+='<label class="opt"><input type="radio" name="'+q.id+'" value="'+esc(o)+'"><span>'+esc(o)+'</span></label>'});
- c.innerHTML=h+'</div>';$("qs").appendChild(c)});
-function val(n){var e=document.querySelector("input[name=\""+n+"\"]:checked");return e?e.value:""}
-function count(){var n=0;QS.forEach(function(q){if(val(q.id))n++});$("prog").textContent=n+" / 20 answered";return n}
-document.addEventListener("change",count);
-$("send").onclick=function(){var b=this;$("err").textContent="";
- var name=$("name").value.trim(),roll=$("roll").value.trim(),lab=val("lab"),e=[];
- if(!name)e.push("Full name");if(!roll)e.push("Roll number");if(!lab)e.push("Lab");
- if(e.length){$("err").textContent="Please fill: "+e.join(", ");window.scrollTo(0,0);return}
- var n=count();if(n<20&&!confirm("You answered "+n+" of 20. Submit anyway?"))return;
- var ans={};QS.forEach(function(q){ans[q.id]=val(q.id)});
- b.disabled=true;b.textContent="Submitting…";
- fetch(API,{method:"POST",body:JSON.stringify({action:"final",p:{name:name,roll:roll,lab:lab,answers:ans,switches:switches}}),headers:{"Content-Type":"text/plain;charset=utf-8"},credentials:"omit",redirect:"follow"})
- .then(function(x){return x.json()}).then(function(j){if(j.err)throw new Error(j.err);var r=j.ok;
-  $("who").textContent=name+" · "+roll.toUpperCase();$("score").textContent=r.score+" / "+r.total;
-  $("msg").textContent=r.already?"You already submitted this quiz earlier. This is your first score.":(r.score>=16?"Excellent work! 🌟":r.score>=12?"Good job! Revise the ones in red.":"Good start. Revise the red ones with the handbook.");
-  var h="";QS.forEach(function(q,i){var mine=ans[q.id]||"(no answer)",ok=mine===r.key[q.id];
-   h+='<div class="rv '+(ok?"ok":"no")+'"><b>'+(i+1)+'. '+esc(q.q)+'</b><br>'+(ok?"✅ ":"❌ Your answer: "+esc(mine)+"<br>✔️ Correct: ")+esc(r.key[q.id])+'</div>'});
-  $("review").innerHTML=h;$("f").className="hide";$("done").className="";window.scrollTo(0,0)})
- .catch(function(err){$("err").textContent=(err&&err.message&&err.message.indexOf("fetch")<0)?err.message:"Network problem. Please check your internet and try again.";})
- .finally(function(){b.disabled=false;b.textContent="Submit quiz ✓"})};
+function call(action,p,ok,fail){fetch(API,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({action:action,p:p})}).then(function(r){return r.json()}).then(function(j){if(j.err)fail(j.err);else ok(j.ok)}).catch(function(){fail("Network problem. Check your internet and try again.")})}
+function norm(s){return String(s||"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim()}
+function noPaste(el){["paste","drop"].forEach(function(ev){el.addEventListener(ev,function(e){e.preventDefault();alert("Please type it yourself. Pasting is turned off here.")})})}
+function waBox(){if(WA){var b=$("wa");if(b){b.className="card contact";b.querySelector("a").href="https://wa.me/"+WA+"?text="+encodeURIComponent("Hi Rajeev sir, I attended the ILP workshop at RK College.")}}}
+
+var BANK={"py": [{"id": "py1", "t": 20, "q": "What does this print?", "c": "print(len(\"hello\"))", "o": ["6", "5", "4", "hello"]}, {"id": "py2", "t": 25, "q": "What does this print?", "c": "x = [1, 2, 3]\nx.append(4)\nprint(len(x))", "o": ["3", "4", "Error", "5"]}, {"id": "py3", "t": 15, "q": "Which keyword defines a function in Python?", "c": "", "o": ["define", "fun", "function", "def"]}, {"id": "py4", "t": 20, "q": "What does this print?", "c": "print(10 // 3)", "o": ["4", "3", "1", "3.33"]}, {"id": "py5", "t": 35, "q": "What does this print?", "c": "d = {\"a\": 1}\nprint(d.get(\"b\", 0))", "o": ["1", "0", "None", "KeyError"]}, {"id": "py6", "t": 30, "q": "In Flask, which line connects a URL to a function?", "c": "", "o": ["route(\"/\") = app", "app.url(\"/\")", "@flask.get(\"/\")", "@app.route(\"/\")"]}, {"id": "py7", "t": 30, "q": "What does this print?", "c": "for i in range(3):\n    print(i, end=\" \")", "o": ["1 2 3", "0 1 2", "0 1 2 3", "3"]}, {"id": "py8", "t": 20, "q": "What is try / except used for?", "c": "", "o": ["To define a class", "To handle errors without crashing", "To repeat code", "To import a module"]}, {"id": "py9", "t": 20, "q": "What does this print?", "c": "print(\"5\" + \"3\")", "o": ["53", "8", "5 3", "Error"]}, {"id": "py10", "t": 40, "q": "What does this print?", "c": "s = \"ILP\"\nprint(s[::-1])", "o": ["I", "ILP", "Error", "PLI"]}], "js": [{"id": "js1", "t": 20, "q": "What does this print?", "c": "console.log(typeof 42)", "o": ["string", "int", "42", "number"]}, {"id": "js2", "t": 25, "q": "What does this print?", "c": "let a = [1, 2, 3];\na.push(4);\nconsole.log(a.length);", "o": ["5", "3", "undefined", "4"]}, {"id": "js3", "t": 20, "q": "What does this print?", "c": "console.log(\"5\" + 3)", "o": ["NaN", "Error", "8", "53"]}, {"id": "js4", "t": 25, "q": "What does this print?", "c": "console.log(5 === \"5\")", "o": ["true", "Error", "undefined", "false"]}, {"id": "js5", "t": 20, "q": "What does const mean?", "c": "", "o": ["The value is always a number", "The variable is deleted later", "The variable cannot be reassigned", "The variable is global"]}, {"id": "js6", "t": 30, "q": "In Express, app.get(\"/api\", ...) handles which requests?", "c": "", "o": ["All requests to /api", "GET requests to /api", "Requests to every URL", "POST requests to /api"]}, {"id": "js7", "t": 35, "q": "What does this give?", "c": "[1, 2, 3].map(x => x * 2)", "o": ["12", "[3, 4, 5]", "[1, 2, 3]", "[2, 4, 6]"]}, {"id": "js8", "t": 30, "q": "What does res.status(404).json({error: 'Not found'}) send?", "c": "", "o": ["Status 404 with a JSON body", "Status 200 with text", "A redirect to /404", "Nothing"]}, {"id": "js9", "t": 20, "q": "What does this print?", "c": "console.log(10 % 3)", "o": ["0", "1", "3.33", "3"]}, {"id": "js10", "t": 35, "q": "What does this print?", "c": "console.log(JSON.parse('{\"a\": 1}').a)", "o": ["a", "{a: 1}", "1", "undefined"]}], "jv": [{"id": "jv1", "t": 20, "q": "What does this print?", "c": "int x = 10 / 3;\nSystem.out.println(x);", "o": ["4", "3.33", "3", "3.0"]}, {"id": "jv2", "t": 20, "q": "Which method is the starting point of a Java program?", "c": "", "o": ["public static void main(String[] args)", "void init(String args)", "public void start()", "static int run()"]}, {"id": "jv3", "t": 20, "q": "What does this print?", "c": "String s = \"ILP\";\nSystem.out.println(s.length());", "o": ["ILP", "2", "4", "3"]}, {"id": "jv4", "t": 30, "q": "What does this print?", "c": "ArrayList<Integer> a = new ArrayList<>();\na.add(5);\na.add(7);\nSystem.out.println(a.size());", "o": ["7", "12", "2", "1"]}, {"id": "jv5", "t": 25, "q": "In Spring Boot, which annotation makes a class return JSON from its methods?", "c": "", "o": ["@Service", "@RestController", "@Entity", "@Autowired"]}, {"id": "jv6", "t": 20, "q": "What does this print?", "c": "System.out.println(10 % 4);", "o": ["2.5", "4", "2", "0"]}, {"id": "jv7", "t": 25, "q": "What is the correct way to compare two Strings in Java?", "c": "", "o": ["a.compare(b) == true", "a = b", "a.equals(b)", "a == b"]}, {"id": "jv8", "t": 30, "q": "@GetMapping(\"/api/students\") handles which request?", "c": "", "o": ["POST /api/students", "DELETE /api/students", "GET /api/students", "Every request"]}, {"id": "jv9", "t": 20, "q": "What does this print?", "c": "int[] n = {4, 5, 6};\nSystem.out.println(n[1]);", "o": ["Error", "5", "4", "6"]}, {"id": "jv10", "t": 15, "q": "Which keyword creates a new object?", "c": "", "o": ["make", "object", "new", "create"]}], "web": [{"id": "w1", "t": 20, "q": "Which HTTP method creates new data?", "c": "", "o": ["GET", "HEAD", "POST", "DELETE"]}, {"id": "w2", "t": 15, "q": "Which status code means 'Not found'?", "c": "", "o": ["500", "200", "404", "301"]}, {"id": "w3", "t": 20, "q": "Status code 201 means:", "c": "", "o": ["Server error", "Forbidden", "Not found", "Created"]}, {"id": "w4", "t": 20, "q": "Which SQL reads all rows from a table?", "c": "", "o": ["READ students", "SHOW ROWS students", "GET ALL students", "SELECT * FROM students"]}, {"id": "w5", "t": 25, "q": "Which SQL removes one row?", "c": "", "o": ["DROP students WHERE id = 1", "DELETE FROM students WHERE id = 1", "ERASE FROM students", "REMOVE students 1"]}, {"id": "w6", "t": 15, "q": "Which git command saves a snapshot of your changes?", "c": "", "o": ["git push", "git save", "git init", "git commit"]}, {"id": "w7", "t": 15, "q": "Which git command uploads your commits to GitHub?", "c": "", "o": ["git push", "git upload", "git commit", "git add"]}, {"id": "w8", "t": 20, "q": "What does git add . do?", "c": "", "o": ["Deletes old files", "Uploads files to GitHub", "Prepares all changed files for the next commit", "Creates a new repository"]}, {"id": "w9", "t": 15, "q": "API stands for:", "c": "", "o": ["App Process Integration", "Automatic Page Index", "Application Programming Interface", "Applied Program Internet"]}, {"id": "w10", "t": 20, "q": "What is {\"name\": \"Ravi\", \"marks\": 80}?", "c": "", "o": ["An HTML tag", "A Python function", "JSON data", "An SQL query"]}, {"id": "w11", "t": 15, "q": "What is localhost?", "c": "", "o": ["Your own computer", "Google's server", "GitHub", "The college Wi-Fi"]}, {"id": "w12", "t": 20, "q": "Status code 401 usually means:", "c": "", "o": ["Page moved", "Everything is OK", "Created", "You need to log in"]}, {"id": "w13", "t": 20, "q": "Which SQL adds a new row?", "c": "", "o": ["INSERT INTO", "UPDATE", "ADD ROW", "CREATE ROW"]}, {"id": "w14", "t": 20, "q": "PUT is mostly used to:", "c": "", "o": ["Delete data", "Log out", "Read data", "Update existing data"]}], "apt": [{"id": "a1", "t": 45, "q": "A train runs at 60 km/h. How far does it go in 2.5 hours?", "c": "", "o": ["150 km", "160 km", "120 km", "140 km"]}, {"id": "a2", "t": 30, "q": "What is 20% of 450?", "c": "", "o": ["90", "100", "80", "45"]}, {"id": "a3", "t": 45, "q": "Find the next number: 2, 6, 12, 20, 30, ?", "c": "", "o": ["36", "42", "40", "44"]}, {"id": "a4", "t": 45, "q": "Bought for ₹400, sold for ₹500. Profit percent?", "c": "", "o": ["50%", "20%", "25%", "100%"]}, {"id": "a5", "t": 25, "q": "Average of 10, 20, 30 and 40?", "c": "", "o": ["20", "30", "100", "25"]}, {"id": "a6", "t": 40, "q": "5 pens cost ₹60. What do 8 pens cost?", "c": "", "o": ["₹96", "₹100", "₹80", "₹90"]}, {"id": "a7", "t": 75, "q": "A finishes a job in 10 days, B in 15 days. Together they finish it in:", "c": "", "o": ["5 days", "8 days", "6 days", "12.5 days"]}, {"id": "a8", "t": 45, "q": "64 is split in the ratio 3 : 5. The larger part is:", "c": "", "o": ["40", "45", "24", "38"]}, {"id": "a9", "t": 50, "q": "Simple interest on ₹2000 at 5% per year for 3 years?", "c": "", "o": ["₹315", "₹300", "₹250", "₹100"]}, {"id": "a10", "t": 25, "q": "Angle between the clock hands at 3:00?", "c": "", "o": ["90°", "45°", "180°", "60°"]}, {"id": "a11", "t": 20, "q": "Next letter: A, C, E, G, ?", "c": "", "o": ["H", "I", "J", "K"]}, {"id": "a12", "t": 40, "q": "Today is Monday. What day is it after 10 days?", "c": "", "o": ["Friday", "Thursday", "Monday", "Wednesday"]}, {"id": "a13", "t": 40, "q": "Which is the largest?", "c": "", "o": ["3/5", "0.5", "2/3", "0.6"]}, {"id": "a14", "t": 60, "q": "15 workers finish a job in 12 days. How many days for 20 workers?", "c": "", "o": ["10", "8", "9", "16"]}], "eng": [{"id": "e1", "t": 15, "q": "She ___ to college every day.", "c": "", "o": ["goes", "go", "gone", "going"]}, {"id": "e2", "t": 15, "q": "Choose the word closest in meaning to 'rapid':", "c": "", "o": ["slow", "late", "rare", "fast"]}, {"id": "e3", "t": 15, "q": "Choose the opposite of 'ancient':", "c": "", "o": ["modern", "old", "historic", "early"]}, {"id": "e4", "t": 20, "q": "Which spelling is correct?", "c": "", "o": ["neccessary", "neccesary", "necessary", "necesary"]}, {"id": "e5", "t": 20, "q": "I have been working here ___ 2024.", "c": "", "o": ["for", "since", "at", "from"]}, {"id": "e6", "t": 25, "q": "Which sentence is correct?", "c": "", "o": ["He not like coffee.", "He doesn't likes coffee.", "He doesn't like coffee.", "He don't like coffee."]}, {"id": "e7", "t": 15, "q": "Plural of 'child':", "c": "", "o": ["children", "childrens", "childs", "childes"]}, {"id": "e8", "t": 30, "q": "Neither Ravi nor his friends ___ late.", "c": "", "o": ["has", "was", "is", "were"]}, {"id": "e9", "t": 20, "q": "'Meet the deadline' means:", "c": "", "o": ["Meet a person", "Finish the work on time", "Miss the date", "Start the work"]}, {"id": "e10", "t": 15, "q": "She is ___ engineer.", "c": "", "o": ["a", "no article", "an", "the"]}, {"id": "e11", "t": 15, "q": "He is good ___ maths.", "c": "", "o": ["in", "with", "on", "at"]}, {"id": "e12", "t": 30, "q": "Passive form of 'Ravi wrote the code':", "c": "", "o": ["The code written Ravi.", "The code was written by Ravi.", "Ravi was written the code.", "The code is writing by Ravi."]}, {"id": "e13", "t": 40, "q": "Best start for 'Tell me about yourself' in an interview:", "c": "", "o": ["My name is on my resume.", "I don't know what to say.", "I'm a final-year CSE student. I built three web apps with login and a database.", "I like movies and sleeping."]}, {"id": "e14", "t": 15, "q": "Choose the word closest in meaning to 'improve':", "c": "", "o": ["reduce", "delay", "enhance", "ignore"]}], "tough": [{"id": "t1", "t": 45, "q": "x = 5, then x = x * 2 + 1, then x = x % 4. What is x?", "c": "", "o": ["1", "3", "2", "11"]}, {"id": "t2", "t": 40, "q": "What is 13 in binary?", "c": "", "o": ["1011", "1110", "1001", "1101"]}, {"id": "t3", "t": 45, "q": "Searching for a value in an unsorted list of n items takes, in the worst case:", "c": "", "o": ["O(n²)", "O(n)", "O(1)", "O(log n)"]}, {"id": "t4", "t": 45, "q": "SELECT COUNT(*) FROM students WHERE marks >= 35 returns:", "c": "", "o": ["The marks of all students", "The number of passing students", "The highest marks", "All failing students"]}, {"id": "t5", "t": 25, "q": "Next number: 1, 1, 2, 3, 5, 8, ?", "c": "", "o": ["16", "12", "11", "13"]}, {"id": "t6", "t": 75, "q": "Price is marked 25% above cost, then sold at 10% discount. Profit percent?", "c": "", "o": ["35%", "12.5%", "15%", "10%"]}, {"id": "t7", "t": 40, "q": "Balance is ₹1000 and a user withdraws ₹1500. The best API response is:", "c": "", "o": ["400 with 'Not enough balance'", "200 with balance -500", "404 Not found", "201 Created"]}, {"id": "t8", "t": 20, "q": "Which data structure is Last In, First Out?", "c": "", "o": ["Tree", "Stack", "Array", "Queue"]}, {"id": "t9", "t": 45, "q": "Passwords are stored as hashes. At login the app should:", "c": "", "o": ["Store the typed password again", "Decrypt the stored password", "Email the password to the user", "Hash the typed password and compare the hashes"]}, {"id": "t10", "t": 75, "q": "Pipe A fills a tank in 6 hours. Pipe B empties it in 12 hours. Both open: the tank fills in", "c": "", "o": ["9 hours", "4 hours", "12 hours", "18 hours"]}]},PAPER=[["prog",5],["web",4],["apt",4],["eng",4],["tough",3]],LABS=[["Python","py"],["Node.js","js"],["Java","jv"]];
+var DECL="I will answer this exam myself, without ChatGPT, any AI tool or help from anyone.";
+var lab="",st=null,paper=[],timer=null,saving=false,KEY="";
+LABS.forEach(function(l){var b=document.createElement("button");b.type="button";b.className="chip";b.textContent=l[0];b.onclick=function(){lab=l[0];[].forEach.call($("lab").children,function(c){c.classList.toggle("on",c===b)})};$("lab").appendChild(b)});
+noPaste($("dc"));
+function hash(s){var h=2166136261;for(var i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
+function rng(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;var t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function shuf(a,r){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(r()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+function build(roll,labName){var r=rng(hash(roll+"|"+labName+"|ilp26")),code=LABS.filter(function(l){return l[0]===labName})[0][1],out=[];
+ PAPER.forEach(function(p){var src=p[0]==="prog"?BANK[code]:BANK[p[0]];shuf(src,r).slice(0,p[1]).forEach(function(q){out.push({id:q.id,t:q.t,q:q.q,c:q.c,o:shuf(q.o,r),cat:p[0]})})});
+ return shuf(out,r)}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
+function load(){try{return JSON.parse(localStorage.getItem(KEY)||"null")}catch(e){return null}}
+$("go").onclick=function(){
+ var name=$("nm").value.trim(),roll=$("rl").value.trim().toUpperCase().replace(/\s+/g,"");
+ if(!name||!roll||!lab){$("e1").textContent="Please fill your name, roll number and language.";return}
+ if(norm($("dc").value)!==norm(DECL)){$("e1").textContent="Type the promise exactly as shown (spelling matters).";return}
+ KEY="ilpcert26_"+roll;var old=load();
+ if(old&&old.done){$("e1").textContent="You have already submitted this exam.";return}
+ if(old&&old.lab!==lab){$("e1").textContent="You already started the exam with "+old.lab+". Please choose "+old.lab+".";return}
+ $("go").disabled=true;$("e1").textContent="Starting…";
+ call("cert_start",{name:name,roll:roll,lab:lab,resumed:!!old},function(r){
+  if(r.already){$("e1").textContent="This roll number has already submitted the exam. Score: "+r.score+" / 20.";$("go").disabled=false;return}
+  st=old||{name:name,roll:roll,lab:lab,idx:0,ans:{},tm:{},bl:{},sw:0,away:0,cp:0,ps:0,starts:0,qEnd:0,t0:Date.now()};
+  st.starts++;st.name=name;save();paper=build(roll,lab);begin()},
+  function(m){$("e1").textContent=m;$("go").disabled=false})};
+function begin(){$("s1").className="hide";$("s2").className="quiz";document.body.className="quizmode";window.scrollTo(0,0);
+ window.onbeforeunload=function(){return "Leaving will not give you more time."};
+ document.addEventListener("visibilitychange",function(){if(document.hidden)away();else back()});
+ window.addEventListener("blur",away);window.addEventListener("focus",back);
+ ["copy","cut","contextmenu","selectstart"].forEach(function(ev){document.addEventListener(ev,function(e){if(ev!=="selectstart"){st.cp++;save()}e.preventDefault()})});
+ document.addEventListener("paste",function(e){st.ps++;save();e.preventDefault()});
+ document.addEventListener("keydown",function(e){if((e.ctrlKey||e.metaKey)&&/^[cxpsua]$/i.test(e.key)){e.preventDefault();st.cp++;save()}if(e.key==="PrintScreen"){st.cp++;save()}});
+ show()}
+var awayAt=0;
+function away(){if(awayAt||!st||st.done)return;awayAt=Date.now();st.sw++;var q=paper[st.idx];if(q)st.bl[q.id]=1;save()}
+function back(){if(!awayAt)return;st.away+=Date.now()-awayAt;awayAt=0;save()}
+var sel=null,qStart=0;
+function show(){clearInterval(timer);
+ if(st.idx>=paper.length){finish();return}
+ var q=paper[st.idx];sel=st.ans[q.id]||null;
+ if(!st.qEnd){st.qEnd=Date.now()+q.t*1000;save()}
+ qStart=st.qEnd-q.t*1000;
+ $("qn").textContent="Question "+(st.idx+1)+" / "+paper.length;$("pb").style.width=(st.idx/paper.length*100)+"%";
+ $("qt").textContent=q.q;if(q.c){$("qc").textContent=q.c;$("qc").className=""}else $("qc").className="hide";
+ var box=$("qo");box.innerHTML="";q.o.forEach(function(o){var b=document.createElement("button");b.type="button";b.className="ans"+(o===sel?" sel":"");b.textContent=o;
+  b.onclick=function(){sel=o;[].forEach.call(box.children,function(c){c.classList.toggle("sel",c===b)});$("nx").disabled=false};box.appendChild(b)});
+ $("nx").disabled=!sel;tick();timer=setInterval(tick,250)}
+function remaining(){var q=paper[st.idx],now=Date.now(),cur=Math.max(0,(st.qEnd-now)/1000),rest=0;for(var i=st.idx+1;i<paper.length;i++)rest+=paper[i].t;return [cur,cur+rest,q.t]}
+function fmt(s){s=Math.ceil(s);return Math.floor(s/60)+":"+("0"+s%60).slice(-2)}
+function tick(){var r=remaining(),cur=r[0];
+ $("rs").textContent=Math.ceil(cur);$("tot").textContent="⏱ Total "+fmt(r[1]);
+ var c=2*Math.PI*19;$("rf").style.strokeDasharray=c;$("rf").style.strokeDashoffset=c*(1-cur/r[2]);
+ $("rf").setAttribute("class","rf"+(cur<=5?" low":""));
+ if(cur<=0)next(true)}
+$("nx").onclick=function(){next(false)};
+function next(timeout){clearInterval(timer);var q=paper[st.idx];if(!q)return;
+ if(sel)st.ans[q.id]=sel;st.tm[q.id]=Math.min(q.t*1000,Date.now()-qStart);
+ st.idx++;st.qEnd=0;save();show()}
+function finish(){if(saving)return;saving=true;window.onbeforeunload=null;
+ $("qt").textContent="Submitting your answers…";$("qo").innerHTML="";$("qc").className="hide";$("nx").className="hide";
+ var p={name:st.name,roll:st.roll,lab:st.lab,qids:paper.map(function(q){return q.id}),answers:st.ans,times:st.tm,blur:st.bl,switches:st.sw,away:Math.round(st.away/1000),copy:st.cp,paste:st.ps,starts:st.starts,total:Math.round((Date.now()-st.t0)/1000),device:(screen.width+"x"+screen.height+" "+navigator.userAgent).slice(0,160)};
+ var tries=0;(function send(){call("cert_submit",p,function(r){st.done=true;st.score=r.score;save();
+   try{localStorage.setItem("ilpcert26_me",JSON.stringify({name:st.name,roll:st.roll,lab:st.lab}))}catch(e){}
+   $("s2").className="hide";$("s3").className="";document.body.className="";
+   $("sc").textContent=r.score+" / "+r.total;$("rt").textContent=r.already?"You had already submitted. This is your first submission's score.":"Well done for finishing. Your answers are saved.";waBox()},
+  function(m){tries++;$("qt").textContent=m+" Retrying… ("+tries+")";setTimeout(send,3000)})})()}
+
 </script></body></html>
