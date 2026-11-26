@@ -1,0 +1,414 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Final Exam, Feedback & GitHub – ILP Workshop, RK College of Engineering</title><meta name="robots" content="noindex">
+<style>
+:root{--navy:#21295C;--blue:#065A82;--teal:#1C7293;--amber:#F2A104;--bg:#F4F7F9;--ink:#1d2433;--mut:#5b6474;--line:#dde3ea}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:16px 16px 48px}
+.hero{background:linear-gradient(115deg,var(--navy),var(--blue) 55%,var(--teal));color:#fff;border-radius:14px;padding:22px 22px 18px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-60px;top:-80px;width:220px;height:220px;border-radius:50%;background:rgba(242,161,4,.22)}
+.col{color:var(--amber);font-weight:800;letter-spacing:3px;font-size:13px}.addr{font-size:12.5px;opacity:.8}
+.addr a{color:#fff}h1{font-size:25px;margin:10px 0 8px;line-height:1.2}
+.tags span{display:inline-block;font-size:12.5px;font-weight:700;padding:3px 11px;border-radius:20px;border:1px solid rgba(255,255,255,.4);margin:0 6px 6px 0;background:rgba(255,255,255,.12)}
+.tags span.a{background:var(--amber);border-color:var(--amber);color:var(--navy)}.when{font-size:13.5px;margin-top:4px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin-top:14px}
+.card h2{margin:0 0 4px;font-size:18px;color:var(--navy)}.hint{color:var(--mut);font-size:13.5px;margin:0 0 10px}
+.q{margin:16px 0 0}.q>label.t{display:block;font-weight:600;margin-bottom:6px}.req{color:#c0392b}
+input[type=text],textarea,select{width:100%;padding:10px 12px;border:1px solid #c9d2dc;border-radius:8px;font:inherit;background:#fff}
+textarea{min-height:90px;resize:vertical}input:focus,textarea:focus,select:focus{outline:2px solid var(--teal);border-color:var(--teal)}
+.opt{display:flex;align-items:center;gap:10px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;margin-bottom:6px;cursor:pointer}
+.opt input{accent-color:var(--navy);width:20px;height:20px;flex-shrink:0;margin:0}
+table.grid{width:100%;border-collapse:collapse;font-size:14px}table.grid th,table.grid td{padding:7px 4px;text-align:center;border-bottom:1px solid var(--line)}
+table.grid td:first-child,table.grid th:first-child{text-align:left}table.grid input{accent-color:var(--navy);width:22px;height:22px;margin:0}table.grid label{display:block;padding:6px 0;cursor:pointer}
+.privacy{background:#eef6f9;border-left:4px solid var(--teal);padding:10px 12px;border-radius:6px;font-size:13.5px;margin-top:12px}
+.btn{display:inline-block;background:var(--navy);color:#fff;border:0;border-radius:9px;padding:12px 22px;font:inherit;font-weight:700;cursor:pointer;margin-top:18px}
+.btn:disabled{opacity:.5;cursor:default}.btn.amber{background:var(--amber);color:var(--navy)}
+.err{color:#c0392b;font-weight:600;margin-top:10px}
+.warn{background:#fff6e0;border:2px solid var(--amber);border-radius:12px;padding:16px}.warn h2{color:#8a5a00}
+.warn li{margin:6px 0}
+.quiz{user-select:none;-webkit-user-select:none}
+.top{display:flex;justify-content:space-between;font-weight:700;color:var(--navy)}
+.bar{height:10px;background:#e3e8ee;border-radius:6px;overflow:hidden;margin:8px 0 14px}.bar i{display:block;height:100%;background:var(--teal);width:100%}
+.bar i.low{background:#d9534f}.qt{font-size:18px;font-weight:700;margin:6px 0 10px}
+pre{background:#1e2433;color:#e8edf3;padding:12px 14px;border-radius:8px;font:14px/1.5 Consolas,Menlo,monospace;white-space:pre-wrap;margin:0 0 12px}
+.ans{display:block;width:100%;text-align:left;padding:12px 14px;border:1.5px solid var(--line);border-radius:9px;background:#fff;font:inherit;margin-bottom:8px;cursor:pointer}
+.ans:hover{border-color:var(--teal)}.ans.sel{background:var(--navy);color:#fff;border-color:var(--navy)}
+.ans code,.mono{font-family:Consolas,Menlo,monospace}
+.done{text-align:center}.big{font-size:44px;font-weight:800;color:var(--navy);margin:6px 0}
+.hide{display:none}body.quizmode .hero{display:none}
+@media(max-width:420px){.wrap{padding:12px 12px 40px}.hero{padding:16px}h1{font-size:21px}.card{padding:14px}.qt{font-size:17px}.btn{width:100%;margin-top:12px}}
+.opt.other-on{border-color:var(--amber);background:#fff6e0}
+textarea.own{min-height:70px;margin-top:6px}textarea.own.hl{outline:2px solid var(--amber);border-color:var(--amber)}
+.own-l{display:block;font-weight:600;margin:14px 0 2px;color:var(--teal)}
+.pill{display:inline-block;background:#eef6f9;color:var(--teal);font-size:12px;font-weight:700;padding:2px 9px;border-radius:12px;margin-left:6px;vertical-align:middle}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:0 8px}@media(max-width:520px){.cols{grid-template-columns:1fr}}
+.qn{font-weight:700;color:var(--navy)}.tag2{display:inline-block;font-size:11px;font-weight:700;color:var(--teal);background:#eef6f9;border-radius:10px;padding:1px 8px;margin-left:6px}
+.score{font-size:46px;font-weight:800;color:var(--navy);margin:6px 0}.rv{font-size:14px;margin:6px 0;padding:8px 10px;border-radius:8px}.rv.ok{background:#e7f6ec}.rv.no{background:#fdecea}
+.mono2{font-family:Consolas,monospace}.prog2{position:sticky;top:0;background:var(--bg);padding:8px 0;font-weight:700;color:var(--teal);z-index:2}
+select{width:100%;padding:8px 10px;border:1px solid #c9d2dc;border-radius:8px;font:inherit;background:#fff}.grid3{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:6px 8px;align-items:center}
+.grid3 .h{font-size:13px;font-weight:700;color:var(--mut)}
+
+.hero h1,.hero .col{padding-right:58px}
+.hero .lg{position:absolute;right:18px;top:16px;width:46px;height:46px;background:#fff;border-radius:10px;padding:4px;z-index:1}
+.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{border:1.5px solid #c9d2dc;background:#fff;border-radius:22px;padding:8px 16px;font:inherit;font-weight:600;cursor:pointer;color:var(--ink)}
+.chip.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.pills{display:flex;flex-wrap:wrap;gap:6px}.pill input{position:absolute;opacity:0;pointer-events:none}.pill span{display:inline-block;min-width:42px;text-align:center;padding:8px 10px;border:1.5px solid #c9d2dc;border-radius:8px;cursor:pointer;font-weight:700;background:#fff}
+.pill input:checked+span{background:var(--navy);color:#fff;border-color:var(--navy)}.pills.sm .pill span{min-width:34px;padding:7px 6px}
+.promise{background:#f2f5f8;border-left:4px solid var(--amber);padding:10px 12px;border-radius:6px;font-weight:600;margin:4px 0 8px;user-select:none;-webkit-user-select:none}
+.qcard{position:relative}.qhead{display:flex;gap:14px;align-items:flex-start}
+.ring{position:relative;width:56px;height:56px;flex:none}.ring svg{width:56px;height:56px;transform:rotate(-90deg)}
+.ring .rb{fill:none;stroke:#e3e8ee;stroke-width:4}.ring .rf{fill:none;stroke:var(--teal);stroke-width:4;stroke-linecap:round;transition:stroke-dashoffset .25s linear}
+.ring .rf.low{stroke:#d9534f}.ring b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--navy)}
+.top #tot{font-variant-numeric:tabular-nums}
+.steps li{margin:10px 0}.steps .btn{margin:8px 0 0;display:inline-block;text-decoration:none}
+.repo{font:700 22px Consolas,Menlo,monospace;color:var(--navy);background:#fff6e0;border:2px dashed var(--amber);border-radius:10px;padding:10px;text-align:center;margin:6px 0}
+table.grid.left td,table.grid.left th{text-align:left;padding:7px 6px}
+.contact{background:#eaf7ef;border-color:#9fd3b2}.btn.wa{background:#1f9d55;text-decoration:none}
+.testi{border:2px solid var(--amber)}.testi textarea{min-height:110px}
+a.btn{text-decoration:none}
+.stepper{display:flex;gap:6px;margin:14px 0 0;flex-wrap:wrap}.stepper span{flex:1;min-width:70px;text-align:center;font-size:12.5px;font-weight:700;padding:7px 4px;border-radius:20px;background:#e3e8ee;color:var(--mut)}
+.stepper span.on{background:var(--navy);color:#fff}.stepper span.done{background:#d7efe0;color:#1f7a45}
+.trainer{border-top:1px solid var(--line);padding:12px 0 4px}.trainer:first-of-type{border-top:0}.trainer h3{margin:0;font-size:16px;color:var(--navy)}.trainer .hint{margin:0 0 6px}
+.btn.ghost{background:#fff;color:var(--navy);border:1.5px solid var(--navy);margin-left:6px}
+.repo-inline{font:700 16px Consolas,Menlo,monospace;background:#fff6e0;border:1px dashed var(--amber);padding:1px 6px;border-radius:5px}
+ul.rules li{margin:6px 0}
+@media(max-width:420px){.btn.ghost{margin-left:0}}
+.qhint{background:#fff6e0;border-left:4px solid var(--amber);padding:8px 12px;border-radius:6px;font-size:14.5px;margin:0 0 12px}
+
+body{background:#eef2f6}
+.topbar{background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;padding:10px 16px;position:sticky;top:0;z-index:5}
+.topbar img{width:38px;height:38px}.topbar b{display:block;color:var(--navy);font-size:15px}.topbar span{font-size:12.5px;color:var(--mut)}
+.intro{background:linear-gradient(135deg,var(--navy),var(--teal));color:#fff;border-radius:16px;padding:22px 20px;margin-top:16px}
+.intro h1{margin:0 0 6px;font-size:26px}.intro p{margin:0 0 14px;opacity:.95}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.three div{background:rgba(255,255,255,.13);border-radius:12px;padding:10px 8px;text-align:center}
+.three i{display:block;font-style:normal;font-size:24px}.three b{display:block;font-size:14px}.three span{font-size:11.5px;opacity:.85}
+.btn.wide{width:100%;margin-top:14px}
+.hello{margin:18px 2px 6px}.hello h1{margin:0;font-size:24px;color:var(--navy)}.hello p{margin:2px 0;color:var(--mut)}.hello a{font-size:13px;color:var(--teal)}
+.banner{background:#fff6e0;border:1.5px solid var(--amber);border-radius:12px;padding:12px 14px;margin:12px 0}.banner.ok{background:#e7f6ec;border-color:#5cb87a}
+.tiles{display:grid;gap:10px}
+.tile{display:flex;align-items:center;gap:14px;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:16px;font:inherit;cursor:pointer;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.tile:hover{border-color:var(--teal)}.tile i{font-style:normal;font-size:30px}.tile div{flex:1}.tile b{display:block;font-size:17px;color:var(--navy)}.tile span{font-size:13.5px;color:var(--mut)}
+.tile em{font-style:normal;font-size:22px}.tile.done{background:#f3fbf6;border-color:#9fd3b2}
+.center{text-align:center}
+.ask{text-align:center;margin:14px 0;font-weight:600;color:var(--navy)}.ask a{color:var(--teal)}
+.topbar .tb{flex:1;min-width:0}.cbtn{background:var(--navy);color:#fff;border:0;border-radius:20px;padding:8px 14px;font:inherit;font-weight:700;font-size:13px;cursor:pointer;white-space:nowrap}
+body.quizmode .cbtn{display:none}
+.contact-list{display:grid;gap:10px;margin-top:8px}.contact-list a{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink)}
+.contact-list a:hover{border-color:var(--teal)}.contact-list i{font-style:normal;font-size:24px}.contact-list b{display:block;color:var(--navy)}.contact-list span{font-size:14px;color:var(--mut)}
+.foot{text-align:center;color:var(--mut);font-size:13px;padding:22px 16px 30px;border-top:1px solid var(--line);margin-top:24px;background:#fff}
+.foot b{display:block;color:var(--navy);margin-bottom:4px}.foot a{color:var(--teal)}.foot small{display:block;margin-top:6px}
+body.quizmode .foot{display:none}.back{display:inline-block;margin:14px 0 0;color:var(--teal);font-weight:600;text-decoration:none}
+#rl{font-size:20px;letter-spacing:1px;text-transform:uppercase}#rl::placeholder{text-transform:none;letter-spacing:0}
+</style></head><body>
+
+<header class="topbar"><img src="https://grkkw.in/logo.png" alt="" onerror="this.remove()"><div class="tb"><b>ILP · Rajeev Kumar's Knowledge World</b><span>RK College of Engineering · Final steps</span></div><button class="cbtn" id="cTop">Contact us</button></header>
+<div class="wrap">
+
+<!-- HOME: roll number -->
+<section id="vHome" class="view">
+ <div class="intro"><h1>Your ILP certificate</h1><p>Complete <b>all 3</b> to get your certificate:</p>
+  <div class="three"><div><i>📝</i><b>Exam</b><span>20 simple questions</span></div><div><i>💬</i><b>Feedback</b><span>3 minutes</span></div><div><i>🐙</i><b>GitHub</b><span>by 1 December</span></div></div></div>
+ <div class="card"><h2>Enter your roll number</h2>
+  <input type="text" id="rl" maxlength="30" autocapitalize="characters" placeholder="e.g. 22A91A0501">
+  <p class="err" id="e0"></p><button class="btn amber wide" id="go0">Continue ▶</button></div>
+ <p class="ask">Any questions? Please <a href="#" class="cLink">contact us</a>.</p>
+</section>
+
+<!-- PROFILE: first time -->
+<section id="vProfile" class="view hide">
+ <div class="card"><h2>First, about you</h2>
+  <div class="q"><label class="t" for="nm">Full name <span class="req">*</span></label><input type="text" id="nm" maxlength="100" autocomplete="name"></div>
+  <div class="q"><label class="t">Which language did you use in the lab? <span class="req">*</span></label><div class="chips" id="lab"></div>
+   <p class="hint">Your exam's programming questions will be in this language.</p></div>
+ </div>
+ <div class="card testi"><h2>Your words on our website</h2>
+  <p class="hint">We want <b>real words from real students</b> on <b>grkkw.in</b>. In 2–4 lines, in your own words: what you built, what you learned, what changed for you. If you tick the box, we'll show it with <b>your name and college</b>.</p>
+  <textarea id="testi" maxlength="600" placeholder="Example: Before this workshop I had never pushed code to GitHub. In 3 days I built a login system and a bank app…"></textarea>
+  <label class="opt"><input type="checkbox" id="consent"> Yes, you may publish my words with my name and college (RK College of Engineering) on grkkw.in.</label>
+  <p class="err" id="e1"></p><button class="btn amber wide" id="go1">Save and continue ▶</button>
+ </div>
+</section>
+
+<!-- HUB -->
+<section id="vHub" class="view hide">
+ <div class="hello"><h1 id="hi">Hi!</h1><p id="hisub"></p><a href="#" id="notme">Not you? Change roll number</a></div>
+ <div class="banner" id="banner"></div>
+ <div class="tiles">
+  <button class="tile" id="tExam"><i>📝</i><div><b>Exam</b><span id="sExam"></span></div><em id="kExam"></em></button>
+  <button class="tile" id="tFb"><i>💬</i><div><b>Feedback</b><span id="sFb"></span></div><em id="kFb"></em></button>
+  <button class="tile" id="tGh"><i>🐙</i><div><b>GitHub + LinkedIn</b><span id="sGh"></span></div><em id="kGh"></em></button>
+ </div>
+ <p class="hint center">Certificate = Exam (all 20 answered) + Feedback + GitHub repo by Monday 1 December, 11:59 PM.</p>
+ <p class="ask">Any questions? Please <a href="#" class="cLink">contact us</a>.</p>
+</section>
+
+<!-- EXAM: rules -->
+<section id="vRules" class="view hide">
+ <a href="#" class="back">◀ Back</a>
+ <div class="card warn"><h2>Exam · attempt <span id="attN">1</span> of 2</h2><ul>
+  <li><b>20 simple questions</b> from the workshop (Linux, Git, APIs, your language, step-lab code) plus a few aptitude and English. About 12 minutes.</li>
+  <li>Each question has its <b>own timer</b>. When it ends, the exam moves on. <b>Answer all 20</b> for the certificate.</li>
+  <li><b>You cannot go back.</b> Refreshing does not give more time.</li>
+  <li>You have <b>2 attempts</b>, each with a different paper. Your <b>best score</b> counts.</li>
+  <li>Stay on this page. Using ChatGPT or any AI tool means no Hands-on certificate.</li></ul>
+  <div class="q"><label class="t" for="dc">Type this promise exactly <span class="req">*</span></label>
+   <p class="promise">I will answer this exam myself, without ChatGPT, any AI tool or help from anyone.</p><textarea id="dc" class="own" placeholder="Type the sentence above (copy-paste is turned off)"></textarea></div>
+  <p class="err" id="e2"></p><button class="btn amber wide" id="go2">Start the exam ▶</button>
+ </div>
+</section>
+
+<!-- EXAM: quiz -->
+<section id="vQuiz" class="view hide quiz">
+ <div class="top"><span id="qn">Question 1 / 20</span><span id="tot">⏱ Total</span></div>
+ <div class="bar"><i id="pb"></i></div>
+ <div class="card qcard">
+  <div class="qhead"><div class="ring"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="19" class="rb"/><circle cx="22" cy="22" r="19" class="rf" id="rf"/></svg><b id="rs">30</b></div>
+   <div class="qt" id="qt"></div></div>
+  <pre id="qc" class="hide"></pre><p class="qhint hide" id="qh"></p>
+  <div id="qo"></div>
+  <button class="btn wide" id="nx" disabled>Save and next ▶</button>
+  <p class="hint" style="margin-top:10px">You can't come back to this question.</p>
+ </div>
+</section>
+
+<!-- EXAM: result -->
+<section id="vResult" class="view hide">
+ <div class="card done"><h2>Exam submitted ✅</h2><div class="big" id="sc"></div><p id="rt" class="hint"></p>
+  <button class="btn amber wide" id="toHub1">Continue ▶</button></div>
+</section>
+
+<!-- FEEDBACK -->
+<section id="vFb" class="view hide">
+ <a href="#" class="back">◀ Back</a>
+ <div class="card"><h2>Feedback · the workshop</h2>
+  <div class="q"><label class="t">Overall, how was the workshop? (1 = poor, 5 = excellent) <span class="req">*</span></label><div class="pills"><label class="pill"><input type="radio" name="overall" value="1"><span>1</span></label><label class="pill"><input type="radio" name="overall" value="2"><span>2</span></label><label class="pill"><input type="radio" name="overall" value="3"><span>3</span></label><label class="pill"><input type="radio" name="overall" value="4"><span>4</span></label><label class="pill"><input type="radio" name="overall" value="5"><span>5</span></label></div></div>
+  <div class="q"><label class="t">How useful were the step-by-step labs? (1–5)</label><div class="pills"><label class="pill"><input type="radio" name="labs" value="1"><span>1</span></label><label class="pill"><input type="radio" name="labs" value="2"><span>2</span></label><label class="pill"><input type="radio" name="labs" value="3"><span>3</span></label><label class="pill"><input type="radio" name="labs" value="4"><span>4</span></label><label class="pill"><input type="radio" name="labs" value="5"><span>5</span></label></div></div>
+  <div class="q"><label class="t">How likely are you to recommend ILP to a friend? (0–10)</label><div class="pills sm"><label class="pill"><input type="radio" name="rec" value="0"><span>0</span></label><label class="pill"><input type="radio" name="rec" value="1"><span>1</span></label><label class="pill"><input type="radio" name="rec" value="2"><span>2</span></label><label class="pill"><input type="radio" name="rec" value="3"><span>3</span></label><label class="pill"><input type="radio" name="rec" value="4"><span>4</span></label><label class="pill"><input type="radio" name="rec" value="5"><span>5</span></label><label class="pill"><input type="radio" name="rec" value="6"><span>6</span></label><label class="pill"><input type="radio" name="rec" value="7"><span>7</span></label><label class="pill"><input type="radio" name="rec" value="8"><span>8</span></label><label class="pill"><input type="radio" name="rec" value="9"><span>9</span></label><label class="pill"><input type="radio" name="rec" value="10"><span>10</span></label></div></div>
+ </div>
+ <div class="card"><h2>Feedback · each trainer</h2><p class="hint">Rate each trainer (1–5) and tell them one thing honestly. They will read it.</p><div class="trainer"><h3>Rajeev Kumar Garikapati</h3><p class="hint">Python · Linux · Git · overall</p>
+ <div class="pills"><label class="pill"><input type="radio" name="t_rajeev" value="1"><span>1</span></label><label class="pill"><input type="radio" name="t_rajeev" value="2"><span>2</span></label><label class="pill"><input type="radio" name="t_rajeev" value="3"><span>3</span></label><label class="pill"><input type="radio" name="t_rajeev" value="4"><span>4</span></label><label class="pill"><input type="radio" name="t_rajeev" value="5"><span>5</span></label></div>
+ <textarea id="c_rajeev" class="own" maxlength="300" placeholder="What was good, and what should Rajeev do better?"></textarea></div><div class="trainer"><h3>RajKamal Ch</h3><p class="hint">Java · Spring Boot</p>
+ <div class="pills"><label class="pill"><input type="radio" name="t_rajkamal" value="1"><span>1</span></label><label class="pill"><input type="radio" name="t_rajkamal" value="2"><span>2</span></label><label class="pill"><input type="radio" name="t_rajkamal" value="3"><span>3</span></label><label class="pill"><input type="radio" name="t_rajkamal" value="4"><span>4</span></label><label class="pill"><input type="radio" name="t_rajkamal" value="5"><span>5</span></label></div>
+ <textarea id="c_rajkamal" class="own" maxlength="300" placeholder="What was good, and what should RajKamal do better?"></textarea></div><div class="trainer"><h3>Jeeva Narendra Babu Siriyala</h3><p class="hint">Aptitude · communication · interviews</p>
+ <div class="pills"><label class="pill"><input type="radio" name="t_jeeva" value="1"><span>1</span></label><label class="pill"><input type="radio" name="t_jeeva" value="2"><span>2</span></label><label class="pill"><input type="radio" name="t_jeeva" value="3"><span>3</span></label><label class="pill"><input type="radio" name="t_jeeva" value="4"><span>4</span></label><label class="pill"><input type="radio" name="t_jeeva" value="5"><span>5</span></label></div>
+ <textarea id="c_jeeva" class="own" maxlength="300" placeholder="What was good, and what should Jeeva do better?"></textarea></div><div class="trainer"><h3>Vamsi Pradeep Kongala</h3><p class="hint">React / JavaScript · Node.js</p>
+ <div class="pills"><label class="pill"><input type="radio" name="t_vamsi" value="1"><span>1</span></label><label class="pill"><input type="radio" name="t_vamsi" value="2"><span>2</span></label><label class="pill"><input type="radio" name="t_vamsi" value="3"><span>3</span></label><label class="pill"><input type="radio" name="t_vamsi" value="4"><span>4</span></label><label class="pill"><input type="radio" name="t_vamsi" value="5"><span>5</span></label></div>
+ <textarea id="c_vamsi" class="own" maxlength="300" placeholder="What was good, and what should Vamsi do better?"></textarea></div></div>
+ <div class="card"><h2>Feedback · the exam</h2>
+  <div class="q"><label class="t">How was the time given for each question?</label><div class="chips" id="qtime"></div></div>
+  <div class="q"><label class="t">Which part felt hardest?</label><div class="chips" id="hard"></div></div>
+  <div class="q"><label class="t" for="examc">Anything about the exam you want to tell us?</label><textarea id="examc" class="own" maxlength="400"></textarea></div>
+ </div>
+ <div class="card"><h2>Feedback · you</h2>
+  <div class="q"><label class="t">Confidence in building a small web app <b>before</b> the workshop (1–5)</label><div class="pills"><label class="pill"><input type="radio" name="cb" value="1"><span>1</span></label><label class="pill"><input type="radio" name="cb" value="2"><span>2</span></label><label class="pill"><input type="radio" name="cb" value="3"><span>3</span></label><label class="pill"><input type="radio" name="cb" value="4"><span>4</span></label><label class="pill"><input type="radio" name="cb" value="5"><span>5</span></label></div></div>
+  <div class="q"><label class="t">Confidence <b>now</b> (1–5)</label><div class="pills"><label class="pill"><input type="radio" name="cn" value="1"><span>1</span></label><label class="pill"><input type="radio" name="cn" value="2"><span>2</span></label><label class="pill"><input type="radio" name="cn" value="3"><span>3</span></label><label class="pill"><input type="radio" name="cn" value="4"><span>4</span></label><label class="pill"><input type="radio" name="cn" value="5"><span>5</span></label></div></div>
+  <div class="q"><label class="t" for="liked">What did you like the most?</label><textarea id="liked" class="own" maxlength="400"></textarea></div>
+  <div class="q"><label class="t" for="change">What should we change or improve?</label><textarea id="change" class="own" maxlength="400"></textarea></div>
+  <div class="q"><label class="t">What would you like from ILP next? (choose any)</label><div id="want"></div><textarea id="wantown" class="own" maxlength="200" placeholder="Something else? Write it here"></textarea></div>
+  <div class="q"><label class="t">Best time for you</label><div class="chips" id="when"></div></div>
+  <div class="q"><label class="t" for="idea">Your idea: one thing ILP should do for students like you</label><textarea id="idea" class="own" maxlength="400"></textarea></div>
+  <div class="privacy">We do not ask for your phone number or email.</div>
+  <p class="err" id="e3"></p><button class="btn amber wide" id="go3">Submit feedback ▶</button>
+  <p class="ask">Any questions? Please <a href="#" class="cLink">contact us</a>.</p>
+ </div>
+</section>
+
+<!-- GITHUB -->
+<section id="vGh" class="view hide">
+ <a href="#" class="back">◀ Back</a>
+ <div class="card"><h2>Your GitHub repo and LinkedIn</h2>
+  <p>Create a <b>public</b> repo in <b>your own</b> GitHub account named <span class="repo-inline">ilp-rkce-2026</span> with all 3 projects:</p>
+<pre>ilp-rkce-2026/
+├── README.md        name, roll, language, how to run
+├── marks-analyzer/
+├── login-system/
+└── bank-account/</pre>
+  <ul class="rules"><li>Type the full code yourself: clean final code only, <b>no step files, no hint or commented-out code</b>.</li>
+   <li><b>No copy-paste and no ChatGPT / AI tools.</b> If found, no Hands-on certificate.</li>
+   <li><b>At least 5 commits</b>: 1 README + folders · 2 marks analyzer · 3 login system · 4 bank account · 5 README run steps.</li></ul>
+<pre># first time, inside your ilp-rkce-2026 folder
+git init
+git add .
+git commit -m "Add README and project folders"
+git branch -M main
+git remote add origin https://github.com/YOUR-USERNAME/ilp-rkce-2026.git
+git push -u origin main
+
+# after each project
+git add .
+git commit -m "Add marks analyzer"
+git push</pre>
+  <div class="q"><label class="t" for="url">Repository link <span class="req">*</span></label><input type="text" id="url" placeholder="https://github.com/your-username/ilp-rkce-2026" autocapitalize="off" spellcheck="false"></div>
+  <div class="q"><label class="t" for="li">Your LinkedIn profile link</label><input type="text" id="li" placeholder="https://www.linkedin.com/in/your-name" autocapitalize="off" spellcheck="false">
+   <p class="hint">Add your GitHub repo to your LinkedIn profile too. No LinkedIn yet? Create one today; it's free.</p></div>
+  <div class="q"><label class="t" for="dc2">Type this promise exactly <span class="req">*</span></label><p class="promise">I wrote this code myself, without ChatGPT or any AI tool and without copy paste.</p><textarea id="dc2" class="own" placeholder="Type the sentence above (copy-paste is turned off)"></textarea></div>
+  <p class="err" id="e4"></p><button class="btn amber wide" id="go4">Submit repo link</button>
+  <p class="hint">Deadline: <b>Monday 1 December, 11:59 PM</b>. You can submit again before the deadline; the latest links count.</p>
+  <p class="ask">Any questions? Please <a href="#" class="cLink">contact us</a>.</p>
+ </div>
+</section>
+
+<!-- CONTACT -->
+<section id="vContact" class="view hide">
+ <a href="#" class="back" id="cBack">◀ Back</a>
+ <div class="card"><h2>Contact us</h2><p class="hint">Questions about the exam, your certificate, jobs or what to learn next? Reach Rajeev sir.</p>
+  <div class="contact-list">
+   <a href="mailto:training@grkkw.in"><i>✉️</i><div><b>Email</b><span>training@grkkw.in</span></div></a>
+   <a href="tel:+918096738352"><i>📞</i><div><b>Mobile</b><span>+91 80967 38352</span></div></a>
+   <a href="https://wa.me/918096738352?text=Hi%20Rajeev%20sir%2C%20I%20attended%20the%20ILP%20workshop%20at%20RK%20College." target="_blank" rel="noopener"><i>💬</i><div><b>WhatsApp</b><span>Chat with Rajeev sir</span></div></a>
+   <a href="https://grkkw.in" target="_blank" rel="noopener"><i>🌐</i><div><b>Website</b><span>grkkw.in</span></div></a>
+  </div></div>
+</section>
+
+</div>
+<footer class="foot"><b>ILP · Rajeev Kumar's Knowledge World</b>
+ <div><a href="mailto:training@grkkw.in">training@grkkw.in</a> · <a href="tel:+918096738352">+91 80967 38352</a> · <a href="https://wa.me/918096738352" target="_blank" rel="noopener">WhatsApp</a> · <a href="#" id="cFoot">Contact us</a></div>
+ <small>We do not promise placements. We help you build real skills.</small></footer>
+<script>
+var API="https://script.google.com/macros/s/AKfycbymDI50T5zCIYdEtwbAW3oaHLtmL-b_WIbdEqTvm_QH1tvbTLLxRcUaMxkLCcBXbFy1/exec",WA="918096738352";
+function $(id){return document.getElementById(id)}
+function call(action,p,ok,fail){fetch(API,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({action:action,p:p})}).then(function(r){return r.json()}).then(function(j){if(j.err)fail(j.err);else ok(j.ok)}).catch(function(){fail("Network problem. Check your internet and try again.")})}
+function norm(s){return String(s||"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim()}
+function noPaste(el){["paste","drop"].forEach(function(ev){el.addEventListener(ev,function(e){e.preventDefault();alert("Please type it yourself. Pasting is turned off here.")})})}
+function waBox(){if(WA){var b=$("wa");if(b){b.className="card contact";b.querySelector("a").href="https://wa.me/"+WA+"?text="+encodeURIComponent("Hi Rajeev sir, I attended the ILP workshop at RK College.")}}}
+
+var BANK={"linux": [{"id": "lx1", "t": 25, "q": "Which command shows the folder you are in right now?", "c": "", "o": ["cd", "pwd", "ls", "whoami"], "h": ""}, {"id": "lx2", "t": 25, "q": "Which command lists the files in the current folder?", "c": "", "o": ["pwd", "ls", "mkdir", "cat"], "h": ""}, {"id": "lx3", "t": 25, "q": "Which command creates a new folder called labs?", "c": "", "o": ["new labs", "cd labs", "touch labs", "mkdir labs"], "h": ""}, {"id": "lx4", "t": 30, "q": "You are in /home/ravi/workshop. Which command takes you one folder up, to /home/ravi?", "c": "", "o": ["cd workshop", "cd ..", "ls ..", "cd /"], "h": ""}, {"id": "lx5", "t": 25, "q": "Which command creates an empty file called notes.txt?", "c": "", "o": ["cat notes.txt", "touch notes.txt", "mkdir notes.txt", "cd notes.txt"], "h": ""}, {"id": "lx6", "t": 30, "q": "Which command shows what is written inside notes.txt?", "c": "", "o": ["pwd notes.txt", "ls notes.txt", "cd notes.txt", "cat notes.txt"], "h": ""}, {"id": "lx7", "t": 30, "q": "Which command copies app.py to a new file backup.py?", "c": "", "o": ["mv app.py backup.py", "cp app.py backup.py", "cat app.py backup.py", "rm app.py backup.py"], "h": ""}], "git": [{"id": "gt1", "t": 25, "q": "Which command starts a new Git repository in the current folder?", "c": "", "o": ["git new", "git init", "git start", "git push"], "h": ""}, {"id": "gt2", "t": 25, "q": "Which command prepares all your changed files for the next commit?", "c": "", "o": ["git add .", "git commit", "git log", "git push"], "h": ""}, {"id": "gt3", "t": 30, "q": "Which command saves a version on your laptop with a message?", "c": "", "o": ["git save \"Add marks analyzer\"", "git push -m \"Add marks analyzer\"", "git add -m \"Add marks analyzer\"", "git commit -m \"Add marks analyzer\""], "h": ""}, {"id": "gt4", "t": 25, "q": "What does git push do?", "c": "", "o": ["Downloads code from GitHub", "Saves a version on your laptop only", "Deletes old commits", "Uploads your commits to GitHub"], "h": ""}, {"id": "gt5", "t": 30, "q": "Which file tells Git NOT to upload folders like node_modules/ or venv/?", "c": "", "o": ["package.json", "README.md", "requirements.txt", ".gitignore"], "h": ""}, {"id": "gt6", "t": 35, "q": "Git says \"Please tell me who you are\". What fixes it?", "c": "", "o": ["Delete the folder and start again", "git init again", "git push again", "git config --global user.name \"Your Name\""], "h": ""}, {"id": "gt7", "t": 35, "q": "Which command connects your laptop repo to your GitHub repo?", "c": "", "o": ["git clone origin", "git push github", "git connect github", "git remote add origin https://github.com/you/repo.git"], "h": ""}, {"id": "gt8", "t": 25, "q": "Which command shows which files have changed since the last commit?", "c": "", "o": ["git init", "git push", "git status", "git log"], "h": ""}], "web": [{"id": "wb1", "t": 30, "q": "In CRUD, \"Create\" is which HTTP method?", "c": "", "o": ["GET", "POST", "DELETE", "PUT"], "h": ""}, {"id": "wb2", "t": 30, "q": "In CRUD, \"Update\" is which HTTP method?", "c": "", "o": ["GET", "DELETE", "POST", "PUT"], "h": ""}, {"id": "wb3", "t": 30, "q": "When a new student was added through our API, which status code came back?", "c": "", "o": ["201", "200", "404", "500"], "h": ""}, {"id": "wb4", "t": 30, "q": "Our API returned 404. What does it mean?", "c": "", "o": ["The server is slow", "Not found: no student with that id", "Wrong password", "Created"], "h": ""}, {"id": "wb5", "t": 35, "q": "In the Login project, a wrong password should return which status code?", "c": "", "o": ["201", "404", "401", "200"], "h": ""}, {"id": "wb6", "t": 30, "q": "Which tool did we use to call our own API from the terminal?", "c": "", "o": ["ls", "git", "curl", "pip"], "h": ""}, {"id": "wb7", "t": 35, "q": "Which SQL finds the topper?", "c": "", "o": ["SELECT name, marks FROM students ORDER BY marks DESC LIMIT 1", "ORDER students BY marks", "SELECT MAX(name) FROM students", "SELECT * FROM students LIMIT 1"], "h": ""}, {"id": "wb8", "t": 35, "q": "Error: \"Port 8080 was already in use\". What does it mean?", "c": "", "o": ["The code has a spelling mistake", "The internet is down", "Java is not installed", "Another app is already running on that port"], "h": ""}, {"id": "wb9", "t": 35, "q": "Which SQL deposits ₹500 into account 1?", "c": "", "o": ["SELECT balance + 500 FROM accounts", "INSERT INTO accounts balance 500", "UPDATE accounts SET balance = balance + 500 WHERE id = 1", "DELETE FROM accounts WHERE balance = 500"], "h": ""}], "apt": [{"id": "ap1", "t": 35, "q": "Ravi's marks are 60, 70, 80 and 90. What is his average?", "c": "", "o": ["300", "75", "70", "80"], "h": ""}, {"id": "ap2", "t": 35, "q": "A balance of ₹1000 gets 4% interest. What is the new balance?", "c": "", "o": ["₹1004", "₹1400", "₹1040", "₹4000"], "h": ""}, {"id": "ap3", "t": 40, "q": "5 pens cost ₹60. What do 8 pens cost?", "c": "", "o": ["₹90", "₹100", "₹96", "₹80"], "h": ""}, {"id": "ap4", "t": 45, "q": "A train runs at 60 km/h. How far does it go in 2.5 hours?", "c": "", "o": ["120 km", "140 km", "150 km", "160 km"], "h": ""}], "rsn": [{"id": "rs1", "t": 45, "q": "Find the next number: 2, 6, 12, 20, 30, ?", "c": "", "o": ["44", "42", "40", "36"], "h": ""}, {"id": "rs2", "t": 30, "q": "Find the next letter: A, C, E, G, ?", "c": "", "o": ["J", "K", "I", "H"], "h": ""}, {"id": "rs3", "t": 40, "q": "Today is Monday. What day is it after 10 days?", "c": "", "o": ["Wednesday", "Monday", "Thursday", "Friday"], "h": ""}, {"id": "rs4", "t": 40, "q": "If CAT is written as DBU, how is DOG written?", "c": "", "o": ["DPH", "EOH", "EPH", "FQI"], "h": ""}], "eng": [{"id": "en1", "t": 25, "q": "She ___ to college every day.", "c": "", "o": ["going", "gone", "go", "goes"], "h": ""}, {"id": "en2", "t": 25, "q": "I have been learning Python ___ 2025.", "c": "", "o": ["from", "at", "for", "since"], "h": ""}, {"id": "en3", "t": 30, "q": "Which sentence is correct?", "c": "", "o": ["He not like coffee.", "He doesn't like coffee.", "He doesn't likes coffee.", "He don't like coffee."], "h": ""}, {"id": "en4", "t": 25, "q": "She is ___ engineer.", "c": "", "o": ["the", "a", "no article", "an"], "h": ""}, {"id": "en5", "t": 40, "q": "Best way to start \"Tell me about yourself\" in an interview:", "c": "", "o": ["I'm a CSE student. In a workshop I built three web apps with login and a database.", "My name is on my resume.", "I don't know what to say.", "I like movies and sleeping."], "h": ""}], "py": [{"id": "py1", "t": 25, "q": "How do you run the Marks Analyzer?", "c": "", "o": ["mvn final.py", "node final.js", "python final.py", "run final.py"], "h": ""}, {"id": "py2", "t": 30, "q": "Which command installs Flask?", "c": "", "o": ["python flask", "git install flask", "pip install flask", "npm install flask"], "h": ""}, {"id": "py3", "t": 30, "q": "users = {\"rajeev\": \"ilp123\"}. Which is True when \"rajeev\" is a user?", "c": "", "o": ["users.find(\"rajeev\")", "users == \"rajeev\"", "\"rajeev\" in users", "users.contains(\"rajeev\")"], "h": ""}, {"id": "py4", "t": 30, "q": "Which line adds text to the end of the history list?", "c": "", "o": ["history.append(text)", "history.push(text)", "history + text", "history.add(text)"], "h": ""}, {"id": "py5", "t": 30, "q": "Which line removes the student at position index?", "c": "", "o": ["students.index(index)", "students.cut(index)", "students.splice(index, 1)", "students.pop(index)"], "h": ""}, {"id": "py6", "t": 25, "q": "Which gives the number of characters in password?", "c": "", "o": ["len(password)", "password.size()", "password.length", "count(password)"], "h": ""}, {"id": "py7", "t": 35, "q": "In Flask, @app.route(\"/\") means:", "c": "", "o": ["The server stops at /", "It imports Flask", "It creates the database", "The function below runs when someone opens /"], "h": ""}], "pyc": [{"id": "pyc1", "t": 70, "q": "What does this print?", "c": "def grade(marks):\n    if marks >= 90:\n        return \"A\"\n    elif marks >= 75:\n        return \"B\"\n    elif marks >= 60:\n        return \"C\"\n    else:\n        return \"D\"\n\nprint(grade(80))", "o": ["B", "D", "A", "C"], "h": "Check the conditions from top to bottom. The first one that is True wins."}, {"id": "pyc2", "t": 70, "q": "What does this print?", "c": "def total_marks(students):\n    total = 0\n    for s in students:\n        total = total + s[\"marks\"]\n    return total\n\nprint(total_marks([{\"name\": \"Ravi\", \"marks\": 50},\n                   {\"name\": \"Sita\", \"marks\": 70}]))", "o": ["120", "0", "70", "50"], "h": "total starts at 0 and adds each student's marks."}, {"id": "pyc3", "t": 60, "q": "What does this print?", "c": "def enough_money(account, amount):\n    return amount <= account[\"balance\"]\n\nprint(enough_money({\"balance\": 100}, 500))", "o": ["500", "False", "True", "Error"], "h": "Is 500 less than or equal to 100?"}, {"id": "pyc4", "t": 70, "q": "What does this print?", "c": "account = {\"name\": \"Ravi\", \"balance\": 1000}\naccount[\"balance\"] = account[\"balance\"] + account[\"balance\"] * 4 / 100\nprint(account[\"balance\"])", "o": ["1000.0", "1004.0", "1040.0", "4000.0"], "h": "4% of 1000 is 40. In Python, / always gives a decimal."}, {"id": "pyc5", "t": 60, "q": "What does this print?", "c": "def strong_password(password):\n    return len(password) >= 6\n\nprint(strong_password(\"ilp12\"))", "o": ["True", "5", "6", "False"], "h": "Count the characters in \"ilp12\"."}, {"id": "pyc6", "t": 80, "q": "Which line goes in the blank so it prints 70?", "c": "def withdraw(account, amount):\n    ________\n\nacc = {\"balance\": 100}\nwithdraw(acc, 30)\nprint(acc[\"balance\"])   # should print 70", "o": ["account[\"balance\"] = account[\"balance\"] - amount", "return account[\"balance\"] - amount", "account[\"balance\"] = amount - account[\"balance\"]", "account = account - amount"], "h": "New balance = old balance - amount, saved back into the account."}, {"id": "pyc7", "t": 60, "q": "What does this print?", "c": "students = [\"Ravi\", \"Sita\", \"Kiran\"]\nstudents.pop(1)\nprint(students)", "o": ["['Ravi', 'Sita']", "['Kiran']", "['Ravi', 'Kiran']", "['Sita', 'Kiran']"], "h": "Positions start at 0."}], "js": [{"id": "js1", "t": 25, "q": "How do you run the Node.js Marks Analyzer?", "c": "", "o": ["node final.js", "run final.js", "python final.js", "java final.js"], "h": ""}, {"id": "js2", "t": 30, "q": "Which command installs the packages in package.json, like Express?", "c": "", "o": ["node install", "npm install", "git install", "pip install"], "h": ""}, {"id": "js3", "t": 30, "q": "Which line adds text to the end of the history array?", "c": "", "o": ["history.push(text)", "history.insert(text)", "history.append(text)", "history.add(text)"], "h": ""}, {"id": "js4", "t": 35, "q": "Which line removes 1 student at position index?", "c": "", "o": ["students.slice(index, 1)", "students.splice(index, 1)", "students.pop(index)", "students.remove(index)"], "h": ""}, {"id": "js5", "t": 30, "q": "Why did we use === in passwordOk?", "c": "", "o": ["It compares only the type", "It compares the value AND the type", "It is shorter to type", "It assigns a value"], "h": ""}, {"id": "js6", "t": 25, "q": "Which gives the number of characters in password?", "c": "", "o": ["password.size()", "count(password)", "password.length", "len(password)"], "h": ""}, {"id": "js7", "t": 35, "q": "In Express, app.get(\"/api/students\", ...) runs when:", "c": "", "o": ["A POST request comes in", "Any URL is opened", "Someone sends a GET request to /api/students", "The server starts"], "h": ""}], "jsc": [{"id": "jsc1", "t": 70, "q": "What does this print?", "c": "function grade(marks) {\n  if (marks >= 90) return \"A\";\n  else if (marks >= 75) return \"B\";\n  else if (marks >= 60) return \"C\";\n  else return \"D\";\n}\n\nconsole.log(grade(80));", "o": ["B", "A", "D", "C"], "h": "Check the conditions from top to bottom. The first one that is true wins."}, {"id": "jsc2", "t": 70, "q": "What does this print?", "c": "function totalMarks(students) {\n  let total = 0;\n  for (const s of students) {\n    total = total + s.marks;\n  }\n  return total;\n}\n\nconsole.log(totalMarks([{ name: \"Ravi\", marks: 50 },\n                        { name: \"Sita\", marks: 70 }]));", "o": ["70", "0", "50", "120"], "h": "total starts at 0 and adds each student's marks."}, {"id": "jsc3", "t": 60, "q": "What does this print?", "c": "function enoughMoney(account, amount) {\n  return amount <= account.balance;\n}\n\nconsole.log(enoughMoney({ balance: 100 }, 500));", "o": ["false", "true", "500", "undefined"], "h": "Is 500 less than or equal to 100?"}, {"id": "jsc4", "t": 70, "q": "What does this print?", "c": "const account = { name: \"Ravi\", balance: 1000 };\naccount.balance = account.balance + account.balance * 4 / 100;\nconsole.log(account.balance);", "o": ["1004", "1000", "1040", "4000"], "h": "4% of 1000 is 40."}, {"id": "jsc5", "t": 60, "q": "What does this print?", "c": "function strongPassword(password) {\n  return password.length >= 6;\n}\n\nconsole.log(strongPassword(\"ilp12\"));", "o": ["true", "false", "6", "5"], "h": "Count the characters in \"ilp12\"."}, {"id": "jsc6", "t": 80, "q": "Which line goes in the blank so it prints 70?", "c": "function withdraw(account, amount) {\n  ________\n}\n\nconst acc = { balance: 100 };\nwithdraw(acc, 30);\nconsole.log(acc.balance);   // should print 70", "o": ["return account.balance - amount;", "account = account - amount;", "account.balance = account.balance - amount;", "account.balance = amount - account.balance;"], "h": "New balance = old balance - amount, saved back into the account."}, {"id": "jsc7", "t": 60, "q": "What is left in students?", "c": "const students = [\"Ravi\", \"Sita\", \"Kiran\"];\nstudents.splice(1, 1);\nconsole.log(students);", "o": ["[\"Ravi\", \"Kiran\"]", "[\"Ravi\", \"Sita\"]", "[\"Sita\", \"Kiran\"]", "[\"Kiran\"]"], "h": "splice(1, 1) removes 1 item at position 1. Positions start at 0."}], "jv": [{"id": "jv1", "t": 30, "q": "How do you run the Spring Boot app from the terminal?", "c": "", "o": ["python App.java", "java run spring", "npm start", "mvn spring-boot:run"], "h": ""}, {"id": "jv2", "t": 30, "q": "In Java, how should you compare two Strings, like passwords?", "c": "", "o": ["typed == saved", "typed.equals(saved)", "typed = saved", "typed.compare(saved)"], "h": ""}, {"id": "jv3", "t": 30, "q": "Which line adds text to the end of the history List?", "c": "", "o": ["history.push(text)", "history.insert(text)", "history.add(text)", "history.append(text)"], "h": ""}, {"id": "jv4", "t": 30, "q": "Which line removes the student at position index?", "c": "", "o": ["students.pop(index)", "students.cut(index)", "students.splice(index, 1)", "students.remove(index)"], "h": ""}, {"id": "jv5", "t": 30, "q": "users is a Map. Which checks if \"rajeev\" is a user?", "c": "", "o": ["users.find(\"rajeev\")", "users.containsKey(\"rajeev\")", "\"rajeev\" in users", "users.has(\"rajeev\")"], "h": ""}, {"id": "jv6", "t": 30, "q": "Which annotation makes a Spring Boot class return JSON from its methods?", "c": "", "o": ["@Entity", "@Override", "@RestController", "@Main"], "h": ""}, {"id": "jv7", "t": 35, "q": "\"Port 8080 already in use\" on Windows. Which command stops the old Java process?", "c": "", "o": ["git stop java", "exit java", "taskkill /F /IM java.exe", "mvn kill"], "h": ""}], "jvc": [{"id": "jvc1", "t": 70, "q": "What does this print?", "c": "static String grade(int marks) {\n    if (marks >= 90) return \"A\";\n    else if (marks >= 75) return \"B\";\n    else if (marks >= 60) return \"C\";\n    else return \"D\";\n}\n\n// in main:\nSystem.out.println(grade(80));", "o": ["D", "B", "C", "A"], "h": "Check the conditions from top to bottom. The first one that is true wins."}, {"id": "jvc2", "t": 70, "q": "What does this print?", "c": "int total = 0;\nint[] marks = {50, 70};\nfor (int m : marks) {\n    total = total + m;\n}\nSystem.out.println(total);", "o": ["70", "50", "0", "120"], "h": "total starts at 0 and adds each mark."}, {"id": "jvc3", "t": 60, "q": "What does this print?", "c": "static boolean enoughMoney(double balance, double amount) {\n    return amount <= balance;\n}\n\n// in main:\nSystem.out.println(enoughMoney(100, 500));", "o": ["Error", "false", "true", "500"], "h": "Is 500 less than or equal to 100?"}, {"id": "jvc4", "t": 70, "q": "What does this print?", "c": "double balance = 1000;\nbalance = balance + balance * 4 / 100;\nSystem.out.println(balance);", "o": ["1004.0", "1040.0", "4000.0", "1000"], "h": "4% of 1000 is 40. A double prints with .0"}, {"id": "jvc5", "t": 60, "q": "What does this print?", "c": "static boolean strongPassword(String password) {\n    return password.length() >= 6;\n}\n\n// in main:\nSystem.out.println(strongPassword(\"ilp12\"));", "o": ["6", "5", "true", "false"], "h": "Count the characters in \"ilp12\"."}, {"id": "jvc6", "t": 60, "q": "What does this print?", "c": "String saved = \"ilp123\";\nString typed = \"ilp123\";\nSystem.out.println(typed.equals(saved));", "o": ["Error", "true", "false", "ilp123"], "h": ".equals() compares the text inside the two Strings."}, {"id": "jvc7", "t": 60, "q": "What does this print?", "c": "List<String> students = new ArrayList<>(List.of(\"Ravi\", \"Sita\", \"Kiran\"));\nstudents.remove(1);\nSystem.out.println(students);", "o": ["[Ravi, Kiran]", "[Sita, Kiran]", "[Kiran]", "[Ravi, Sita]"], "h": "remove(1) removes the item at position 1. Positions start at 0."}]},PAPER=[["linux", 3], ["git", 3], ["web", 3], ["prog", 3], ["code", 4], ["apt", 1], ["rsn", 1], ["eng", 2]],LABS=[["Python","py"],["Node.js","js"],["Java","jv"]];
+var DECL="I will answer this exam myself, without ChatGPT, any AI tool or help from anyone.",DECL2="I wrote this code myself, without ChatGPT or any AI tool and without copy paste.",NQ=20;
+var S=null,me={},lab="",st=null,paper=[],timer=null,saving=false,KEY="";
+function chips(id,items,multi,onpick){var box=$(id);items.forEach(function(t){var b=document.createElement("button");b.type="button";b.className="chip";b.textContent=t;
+ b.onclick=function(){if(multi)b.classList.toggle("on");else[].forEach.call(box.children,function(c){c.classList.toggle("on",c===b)});if(onpick)onpick(t)};box.appendChild(b)})}
+function pick(id){return [].filter.call($(id).children,function(c){return c.classList.contains("on")}).map(function(c){return c.textContent})}
+function val(n){var e=document.querySelector('input[name="'+n+'"]:checked');return e?e.value:""}
+chips("lab",LABS.map(function(l){return l[0]}),false,function(t){lab=t});
+chips("qtime",["Too short","Just right","Too long"]);chips("hard",["Programming","Linux / Git","API / SQL","Aptitude / English","None"]);
+chips("when",["Weekday evenings","Weekends","During college hours","Online, any time"]);
+["Internship","Full-stack course (Python / Java / JavaScript)","Aptitude and interview training","Spoken English and communication","Competitive exams (Gati Academy)","Help with my own project idea","Resume and LinkedIn help"].forEach(function(t){var l=document.createElement("label");l.className="opt";l.innerHTML='<input type="checkbox"> <span></span>';l.querySelector("span").textContent=t;$("want").appendChild(l)});
+noPaste($("dc"));noPaste($("dc2"));
+var lastView="vHome";
+function view(id){if(id!=="vContact")lastView=id;[].forEach.call(document.querySelectorAll(".view"),function(v){v.classList.toggle("hide",v.id!==id)});document.body.classList.toggle("quizmode",id==="vQuiz");window.scrollTo(0,0)}
+[].forEach.call(document.querySelectorAll(".back"),function(a){if(a.id==="cBack")return;a.onclick=function(e){e.preventDefault();hub()}});
+function contact(e){if(e)e.preventDefault();if(inExam()){alert("Please finish the exam first.");return}view("vContact")}
+$("cTop").onclick=contact;$("cFoot").onclick=contact;[].forEach.call(document.querySelectorAll(".cLink"),function(a){a.onclick=contact});$("cBack").onclick=function(e){e.preventDefault();view(lastView==="vContact"?"vHome":lastView)};
+function busy(btn,on,txt){btn.disabled=on;if(txt!=null)btn.dataset.t=btn.dataset.t||btn.textContent,btn.textContent=on?txt:btn.dataset.t}
+// ---------- home / status ----------
+function loadStatus(roll,ok,fail){call("cert_status",{roll:roll},function(r){S=r;ok&&ok()},fail)}
+$("go0").onclick=function(){var roll=$("rl").value.trim().toUpperCase().replace(/\s+/g,"");if(!roll){$("e0").textContent="Please enter your roll number.";return}
+ busy($("go0"),true,"Checking…");$("e0").textContent="";
+ loadStatus(roll,function(){busy($("go0"),false);try{localStorage.setItem("ilpfinal26_roll",roll)}catch(e){}
+  if(S.profile){me={name:S.name,roll:roll,lab:S.lab};hub()}else{me={roll:roll};view("vProfile")}},function(m){busy($("go0"),false);$("e0").textContent=m})};
+$("go1").onclick=function(){var name=$("nm").value.trim(),testi=$("testi").value.trim();
+ if(!name||!lab){$("e1").textContent="Please fill your name and language.";return}
+ if(testi.length<20){$("e1").textContent="Please write your 2–4 lines (at least one full sentence).";return}
+ busy($("go1"),true,"Saving…");
+ call("cert_profile",{name:name,roll:me.roll,lab:lab,testimonial:testi,consent:$("consent").checked},function(r){S=r;me={name:name,roll:me.roll,lab:lab};busy($("go1"),false);hub()},
+  function(m){busy($("go1"),false);$("e1").textContent=m})};
+$("notme").onclick=function(e){e.preventDefault();try{localStorage.removeItem("ilpfinal26_roll")}catch(x){}S=null;me={};$("rl").value="";view("vHome")};
+function isTest(){return me.roll==="3"&&/rajeev/i.test(me.name||"")}
+function hub(){if(!S){view("vHome");return}view("vHub");
+ $("hi").textContent="Hi, "+(me.name||S.name||"")+" 👋";$("hisub").textContent=me.roll+" · "+(me.lab||S.lab||"");
+ var exDone=S.attempts>0&&S.allAnswered,fbDone=S.feedback,ghDone=!!S.github;
+ var left=S.maxAttempts-S.attempts;
+ $("sExam").textContent=S.attempts?("Best score "+S.best+" / "+S.total+" · "+(left>0?left+" attempt left":"no attempts left")+(S.allAnswered?"":" · not all 20 answered yet")):"Not started · 2 attempts";
+ $("kExam").textContent=exDone?"✅":(S.attempts?"⚠️":"");
+ $("sFb").textContent=fbDone?"Done. Thank you!":"Not done yet";$("kFb").textContent=fbDone?"✅":"";
+ $("sGh").textContent=ghDone?(S.githubLate?"Submitted (after deadline)":"Submitted · you can update it"):"Not submitted · by 1 December";$("kGh").textContent=ghDone?"✅":"";
+ $("tExam").className="tile"+(exDone?" done":"");$("tFb").className="tile"+(fbDone?" done":"");$("tGh").className="tile"+(ghDone?" done":"");
+ var n=(exDone?1:0)+(fbDone?1:0)+(ghDone?1:0);
+ $("banner").className="banner"+(n===3?" ok":"");
+ if(isTest()){$("hisub").textContent=me.roll+" · "+me.lab+" · 🧪 TEST MODE: 5 questions, 20 s each, unlimited attempts";}
+ $("banner").innerHTML=n===3?"🎉 <b>All 3 done.</b> You are on the certificate list. We'll check your GitHub repo after 1 December.":"<b>"+n+" of 3 done.</b> Complete all 3 to get your certificate.";
+}
+// ---------- tiles ----------
+$("tExam").onclick=function(){if(S.attempts>=S.maxAttempts){alert("You have used both attempts. Your best score is "+S.best+" / "+S.total+".");return}
+ var att=S.attempts+1;$("attN").textContent=att;KEY="ilpfinal26_"+me.roll+"_a"+att;
+ var old=load();if(old&&!old.done&&old.lab===me.lab){st=old;$("e2").textContent="";view("vRules");$("go2").textContent="Continue the exam ▶";return}
+ $("go2").textContent="Start the exam ▶";view("vRules")};
+$("tFb").onclick=function(){view("vFb")};
+$("tGh").onclick=function(){if(S.github)$("url").value=S.github;if(S.linkedin)$("li").value=S.linkedin;view("vGh")};
+$("toHub1").onclick=function(){loadStatus(me.roll,hub,hub)};
+// ---------- exam engine ----------
+function hash(s){var h=2166136261;for(var i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
+function rng(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;var t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function shuf(a,r){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(r()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+function build(roll,labName,att){var r=rng(hash(roll+"|"+labName+"|ilp26|a"+att)),code=LABS.filter(function(l){return l[0]===labName})[0][1],out=[];
+ PAPER.forEach(function(p){var src=p[0]==="prog"?BANK[code]:(p[0]==="code"?BANK[code+"c"]:BANK[p[0]]);shuf(src,r).slice(0,p[1]).forEach(function(q){out.push({id:q.id,t:q.t,q:q.q,c:q.c,h:q.h,o:shuf(q.o,r)})})});
+ return shuf(out,r)}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
+function load(){try{return JSON.parse(localStorage.getItem(KEY)||"null")}catch(e){return null}}
+$("go2").onclick=function(){
+ if(norm($("dc").value)!==norm(DECL)){$("e2").textContent="Type the promise exactly as shown (spelling matters).";return}
+ var o0=load(),resumed=!!(o0&&!o0.done);
+ busy($("go2"),true,"Starting…");$("e2").textContent="";
+ call("cert_start",{name:me.name,roll:me.roll,lab:me.lab,resumed:resumed},function(r){busy($("go2"),false);
+  if(r.blocked){$("e2").textContent="You have used both attempts.";loadStatus(me.roll,null,null);return}
+  KEY="ilpfinal26_"+me.roll+"_a"+r.attempt;var old=load();
+  st=(old&&!old.done)?old:{name:me.name,roll:me.roll,lab:me.lab,att:r.attempt,idx:0,ans:{},tm:{},bl:{},sw:0,away:0,cp:0,ps:0,starts:0,qEnd:0,t0:Date.now()};
+  st.starts++;save();paper=build(me.roll,me.lab,r.attempt);if(isTest()){paper=paper.filter(function(q){return /c\d+$/.test(q.id)}).slice(0,2).concat(paper.filter(function(q){return !/c\d+$/.test(q.id)}).slice(0,3)).map(function(q){q=Object.assign({},q);q.t=20;return q})}saving=false;begin()},
+  function(m){busy($("go2"),false);$("e2").textContent=m})};
+var guards=false;
+function inExam(){return st&&!st.done&&!$("vQuiz").classList.contains("hide")}
+function begin(){view("vQuiz");$("nx").className="btn wide";
+ window.onbeforeunload=function(){return "Leaving will not give you more time."};
+ if(!guards){guards=true;
+  document.addEventListener("visibilitychange",function(){if(document.hidden)away();else back()});
+  window.addEventListener("blur",away);window.addEventListener("focus",back);
+  ["copy","cut","contextmenu"].forEach(function(ev){document.addEventListener(ev,function(e){if(!inExam())return;st.cp++;save();e.preventDefault()})});
+  document.addEventListener("paste",function(e){if(!inExam())return;st.ps++;save();e.preventDefault()});
+  document.addEventListener("keydown",function(e){if(!inExam())return;if((e.ctrlKey||e.metaKey)&&/^[cxpsua]$/i.test(e.key)){e.preventDefault();st.cp++;save()}if(e.key==="PrintScreen"){st.cp++;save()}});}
+ show()}
+var awayAt=0;
+function away(){if(awayAt||!inExam())return;awayAt=Date.now();st.sw++;var q=paper[st.idx];if(q)st.bl[q.id]=1;save()}
+function back(){if(!awayAt)return;st.away+=Date.now()-awayAt;awayAt=0;save()}
+var sel=null,qStart=0;
+function show(){clearInterval(timer);
+ if(st.idx>=paper.length){finish();return}
+ var q=paper[st.idx];sel=st.ans[q.id]||null;
+ if(!st.qEnd){st.qEnd=Date.now()+q.t*1000;save()}
+ qStart=st.qEnd-q.t*1000;
+ $("qn").textContent="Question "+(st.idx+1)+" / "+paper.length;$("pb").style.width=(st.idx/paper.length*100)+"%";
+ $("qt").textContent=q.q;if(q.c){$("qc").textContent=q.c;$("qc").className=""}else $("qc").className="hide";
+ if(q.h){$("qh").textContent="💡 Hint: "+q.h;$("qh").className="qhint"}else $("qh").className="qhint hide";
+ var box=$("qo");box.innerHTML="";q.o.forEach(function(o){var b=document.createElement("button");b.type="button";b.className="ans"+(o===sel?" sel":"");b.textContent=o;
+  b.onclick=function(){sel=o;[].forEach.call(box.children,function(c){c.classList.toggle("sel",c===b)});$("nx").disabled=false};box.appendChild(b)});
+ $("nx").disabled=!sel;tick();timer=setInterval(tick,250)}
+function remaining(){var q=paper[st.idx],cur=Math.max(0,(st.qEnd-Date.now())/1000),rest=0;for(var i=st.idx+1;i<paper.length;i++)rest+=paper[i].t;return [cur,cur+rest,q.t]}
+function fmt(s){s=Math.ceil(s);return Math.floor(s/60)+":"+("0"+s%60).slice(-2)}
+function tick(){var r=remaining(),cur=r[0];
+ $("rs").textContent=Math.ceil(cur);$("tot").textContent="⏱ Total "+fmt(r[1]);
+ var c=2*Math.PI*19;$("rf").style.strokeDasharray=c;$("rf").style.strokeDashoffset=c*(1-cur/r[2]);
+ $("rf").setAttribute("class","rf"+(cur<=5?" low":""));
+ if(cur<=0)next()}
+$("nx").onclick=function(){next()};
+function next(){clearInterval(timer);var q=paper[st.idx];if(!q)return;
+ if(sel)st.ans[q.id]=sel;st.tm[q.id]=Math.min(q.t*1000,Date.now()-qStart);
+ st.idx++;st.qEnd=0;save();show()}
+function finish(){if(saving)return;saving=true;window.onbeforeunload=null;
+ $("qt").textContent="Submitting your answers…";$("qo").innerHTML="";$("qc").className="hide";$("qh").className="qhint hide";$("nx").className="hide";
+ var p={name:st.name,roll:st.roll,lab:st.lab,qids:paper.map(function(q){return q.id}),answers:st.ans,times:st.tm,blur:st.bl,switches:st.sw,away:Math.round(st.away/1000),copy:st.cp,paste:st.ps,starts:st.starts,total:Math.round((Date.now()-st.t0)/1000),device:(screen.width+"x"+screen.height+" "+navigator.userAgent).slice(0,160)};
+ var tries=0;(function send(){call("cert_submit",p,function(r){st.done=true;st.score=r.score;save();
+   var un=paper.filter(function(q){return !st.ans[q.id]}).length;
+   $("sc").textContent=r.score+" / "+r.total;
+   $("rt").textContent=(un?"You left "+un+" question(s) unanswered. For the certificate you must answer all 20"+(r.attempt<2?" — you can use your second attempt.":"."):"Well done, you answered all 20.")+" Attempt "+r.attempt+" of 2.";
+   view("vResult")},
+  function(m){tries++;$("qt").textContent=m+" Retrying… ("+tries+")";setTimeout(send,3000)})})()}
+// ---------- feedback ----------
+$("go3").onclick=function(){
+ if(!val("overall")){$("e3").textContent="Please give the overall rating.";return}
+ var want=[].filter.call($("want").querySelectorAll("input"),function(i){return i.checked}).map(function(i){return i.parentNode.textContent.trim()});
+ var tr={},tc={};["rajeev","rajkamal","jeeva","vamsi"].forEach(function(k){tr[k]=val("t_"+k);tc[k]=$("c_"+k).value});
+ var p={name:me.name,roll:me.roll,lab:me.lab,overall:val("overall"),trainers:tr,comments:tc,labs:val("labs"),rec:val("rec"),
+  qtime:pick("qtime")[0]||"",hard:pick("hard").join("; "),examc:$("examc").value,cb:val("cb"),cn:val("cn"),liked:$("liked").value,change:$("change").value,
+  want:want.concat($("wantown").value.trim()?["Other: "+$("wantown").value.trim()]:[]),when:pick("when")[0]||"",idea:$("idea").value};
+ busy($("go3"),true,"Saving…");$("e3").textContent="";
+ call("cert_feedback",p,function(){busy($("go3"),false);S.feedback=true;hub()},function(m){busy($("go3"),false);$("e3").textContent=m})};
+// ---------- github ----------
+$("go4").onclick=function(){var url=$("url").value.trim().replace(/\.git$/,"").replace(/\/+$/,"");
+ if(!/^https:\/\/github\.com\/[A-Za-z0-9-]+\/ilp-rkce-2026$/i.test(url)){$("e4").textContent="The link must look like https://github.com/your-username/ilp-rkce-2026";return}
+ var li=$("li").value.trim().replace(/\/+$/,"");
+ if(li&&!/^https:\/\/([a-z]{2,3}\.)?linkedin\.com\/in\/[^\s\/]+$/i.test(li)){$("e4").textContent="LinkedIn link must look like https://www.linkedin.com/in/your-name";return}
+ if(norm($("dc2").value)!==norm(DECL2)){$("e4").textContent="Type the promise exactly as shown.";return}
+ busy($("go4"),true,"Saving…");$("e4").textContent="";
+ call("cert_repo",{name:me.name,roll:me.roll,lab:me.lab,url:url,linkedin:li,decl:$("dc2").value},function(r){busy($("go4"),false);S.github=url;S.linkedin=li;S.githubLate=r.late;hub()},function(m){busy($("go4"),false);$("e4").textContent=m})};
+// ---------- auto-continue on return ----------
+(function(){try{var roll=localStorage.getItem("ilpfinal26_roll");if(roll){$("rl").value=roll}}catch(e){}})();
+
+</script></body></html>
